@@ -44,6 +44,7 @@ body {
   width: 300px;
   height: 300px;
   background: #000;
+  border: 10px solid #000;
   border-radius: 36px;
   position: relative;
   transform: rotate(-90deg);
@@ -307,7 +308,7 @@ body {
   transform: translate(-50%, -50%) rotate(150deg);
 }
 
-#watch .container .display .complication {
+#watch .container .display .complication.inside {
   width: 70px;
   height: 70px;
   position: absolute;
@@ -323,11 +324,11 @@ body {
   cursor: pointer;
 }
 
-#watch .container .display .complication:focus {
+#watch .container .display .complication.inside:focus {
   background: #252525;
 }
 
-#watch .container .display .complication#top {
+#watch .container .display .complication.inside#top {
   left: 70%;
   background: #000;
   font-size: 18px;
@@ -340,16 +341,15 @@ body {
   justify-content: center;
 }
 
-#watch .container .display .complication#top span {
+#watch .container .display .complication.inside#top span {
   transform: rotate(90deg);
 }
 
-#watch .container .display .complication#right {
+#watch .container .display .complication.inside#right {
   top: 70%;
-  position: relative;
 }
 
-#watch .container .display .complication#right > span {
+#watch .container .display .complication.inside#right > span {
   transform: rotate(90deg);
   color: #fff;
   width: 100%;
@@ -363,29 +363,29 @@ body {
   justify-content: center;
 }
 
-#watch .container .display .complication#right > span > span {
+#watch .container .display .complication.inside#right > span > span {
   text-transform: uppercase;
   width: 100%;
   text-align: center;
 }
 
-#watch .container .display .complication#right > span #weekday {
+#watch .container .display .complication.inside#right > span #weekday {
   color: #636d84;
   font-size: 16px;
   letter-spacing: 1px;
 }
 
-#watch .container .display .complication#right > span #day {
+#watch .container .display .complication.inside#right > span #day {
   font-size: 32px;
   font-weight: 500;
 }
 
-#watch .container .display .complication#bottom {
+#watch .container .display .complication.inside#bottom {
   background: #000;
   left: 30%;
 }
 
-#watch .container .display .complication#bottom span {
+#watch .container .display .complication.inside#bottom span {
   width: 100%;
   height: 100%;
   transform: rotate(90deg);
@@ -394,56 +394,56 @@ body {
   justify-content: center;
 }
 
-#watch .container .display .complication#bottom span #activity-rings {
+#watch .container .display .complication.inside#bottom span #activity-rings {
   height: 100%;
   width: 100%;
 }
 
-#watch .container .display .complication#bottom span #activity-rings .ring {
+#watch .container .display .complication.inside#bottom span #activity-rings .ring {
   transform-origin: 50%;
 }
 
-#watch .container .display .complication#bottom span #activity-rings .completed {
+#watch .container .display .complication.inside#bottom span #activity-rings .completed {
   stroke-linecap: round;
   animation: ringProgress 1500ms ease-in-out forwards;
 }
 
-#watch .container .display .complication#bottom span #activity-rings circle {
+#watch .container .display .complication.inside#bottom span #activity-rings circle {
   fill: none;
 }
 
-#watch .container .display .complication#bottom span #activity-rings .move-ring .background {
+#watch .container .display .complication.inside#bottom span #activity-rings .move-ring .background {
   stroke: rgba(229, 229, 229, 0.1);
 }
 
-#watch .container .display .complication#bottom span #activity-rings .move-ring .completed {
+#watch .container .display .complication.inside#bottom span #activity-rings .move-ring .completed {
   stroke: #e5e5e5;
   animation-delay: 1000ms;
 }
 
-#watch .container .display .complication#bottom span #activity-rings .exercise-ring .background {
+#watch .container .display .complication.inside#bottom span #activity-rings .exercise-ring .background {
   stroke: rgba(229, 229, 229, 0.1);
 }
 
-#watch .container .display .complication#bottom span #activity-rings .exercise-ring .completed {
+#watch .container .display .complication.inside#bottom span #activity-rings .exercise-ring .completed {
   stroke: #e5e5e5;
   animation-delay: 1200ms;
 }
 
-#watch .container .display .complication#bottom span #activity-rings .stand-ring .background {
+#watch .container .display .complication.inside#bottom span #activity-rings .stand-ring .background {
   stroke: rgba(229, 229, 229, 0.1);
 }
 
-#watch .container .display .complication#bottom span #activity-rings .stand-ring .completed {
+#watch .container .display .complication.inside#bottom span #activity-rings .stand-ring .completed {
   stroke: #e5e5e5;
   animation-delay: 1400ms;
 }
 
-#watch .container .display .complication#left {
+#watch .container .display .complication.inside#left {
   top: 30%;
 }
 
-#watch .container .display .complication#left span {
+#watch .container .display .complication.inside#left span {
   display: block;
   width: 100%;
   height: 100%;
@@ -454,10 +454,43 @@ body {
   padding: 20px;
 }
 
-#watch .container .display .complication#left svg {
+#watch .container .display .complication.inside#left svg {
   fill: #e5e5e5;
   width: 40px;
   height: 40px;
+}
+
+#watch .container .display .complication.outside#top-left {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 110%;
+  height: 110%;
+  transform: translate(-50%, -50%);
+}
+
+#watch .container .display .complication.outside#top-left svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#watch .container .display .complication.outside#top-left .ring {
+  transform-origin: 50%;
+}
+
+#watch .container .display .complication.outside#top-left .ring circle {
+  fill: none;
+  stroke-linecap: round;
+}
+
+#watch .container .display .complication.outside#top-left .ring .background {
+  stroke: rgba(46, 46, 46, 0.4);
+}
+
+#watch .container .display .complication.outside#top-left .ring .completed {
+  stroke: #e5e5e5;
+  animation-delay: 1000ms;
 }
 
 #watch .container .display #main-center {

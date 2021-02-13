@@ -58,17 +58,17 @@
           <div></div>
         </div>
 
-        <!-- complications -->
-        <button id="top" class="complication">
+        <!-- inside complications -->
+        <button id="top" class="complication inside">
           <span>wolf</span>
         </button>
-        <button id="right" class="complication">
+        <button id="right" class="complication inside">
           <span>
             <span id="weekday">FRI</span>
             <span id="day">12</span>
           </span>
         </button>
-        <button id="bottom" class="complication">
+        <button id="bottom" class="complication inside">
           <span>
             <svg id="activity-rings" viewBox="0 0 35 35">
               <g class="ring move-ring" style="transform: scale(1) rotate(-90deg);">
@@ -87,7 +87,7 @@
             </svg>
           </span>
         </button>
-        <button id="left" class="complication">
+        <button id="left" class="complication inside">
           <span>
             <svg id="i-run" viewBox="0 0 122.46 166.53">
               <path
@@ -95,6 +95,14 @@
             </svg>
           </span>
         </button>
+        <div id="top-left" class="complication outside">
+          <svg viewBox="0 0 35 35">
+            <g class="ring" style="transform: scale(1) rotate(-75deg);">
+              <circle class="background" cx="50%" cy="50%" stroke-width="1.2" r="15.915" stroke-dasharray="15, 100" />
+              <circle class="completed" cx="50%" cy="50%" stroke-width="1.2" r="15.915" stroke-dasharray="5, 100" />
+            </g>
+          </svg>
+        </div>
 
         <!-- hands -->
         <div id="minute" class="hand">
@@ -117,6 +125,8 @@
             <div class="center"></div>
           </div>
         </div>
+
+        <!-- center -->
         <div id="main-center"></div>
       </div>
     </div>
