@@ -127,161 +127,163 @@ body {
         }
       }
 
-      .milliseconds {
-        &> div {
-          width: 90%;
-          height: 2px;
-          background: #313643;
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          
-          &::before {
-            content: '';
-            background: #000;
-            border: 2px solid #000;
-            border-radius: 10px;
+      .marks {
+        &.millisecond {
+          &> div {
             width: 90%;
-            height: 100%;
+            height: 2px;
+            background: #313643;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-          }
-  
-          &:nth-of-type(2){
-            transform: translate(-50%, -50%) rotate(6deg);
-          }
-          &:nth-of-type(3){
-            transform: translate(-50%, -50%) rotate(12deg);
-          }
-          &:nth-of-type(4){
-            transform: translate(-50%, -50%) rotate(18deg);
-          }
-          &:nth-of-type(5){
-            transform: translate(-50%, -50%) rotate(24deg);
-          }
-          &:nth-of-type(6){
-            transform: translate(-50%, -50%) rotate(30deg);
-          }
-          &:nth-of-type(7){
-            transform: translate(-50%, -50%) rotate(36deg);
-          }
-          &:nth-of-type(8){
-            transform: translate(-50%, -50%) rotate(42deg);
-          }
-          &:nth-of-type(9){
-            transform: translate(-50%, -50%) rotate(48deg);
-          }
-          &:nth-of-type(10){
-            transform: translate(-50%, -50%) rotate(54deg);
-          }
-          &:nth-of-type(11){
-            transform: translate(-50%, -50%) rotate(60deg);
-          }
-          &:nth-of-type(12){
-            transform: translate(-50%, -50%) rotate(66deg);
-          }
-          &:nth-of-type(13){
-            transform: translate(-50%, -50%) rotate(72deg);
-          }
-          &:nth-of-type(14){
-            transform: translate(-50%, -50%) rotate(78deg);
-          }
-          &:nth-of-type(15){
-            transform: translate(-50%, -50%) rotate(84deg);
-          }
-          &:nth-of-type(16){
-            transform: translate(-50%, -50%) rotate(90deg);
-          }
-          &:nth-of-type(17){
-            transform: translate(-50%, -50%) rotate(96deg);
-          }
-          &:nth-of-type(18){
-            transform: translate(-50%, -50%) rotate(102deg);
-          }
-          &:nth-of-type(19){
-            transform: translate(-50%, -50%) rotate(108deg);
-          }
-          &:nth-of-type(20){
-            transform: translate(-50%, -50%) rotate(114deg);
-          }
-          &:nth-of-type(21){
-            transform: translate(-50%, -50%) rotate(120deg);
-          }
-          &:nth-of-type(22){
-            transform: translate(-50%, -50%) rotate(126deg);
-          }
-          &:nth-of-type(23){
-            transform: translate(-50%, -50%) rotate(132deg);
-          }
-          &:nth-of-type(24){
-            transform: translate(-50%, -50%) rotate(138deg);
-          }
-          &:nth-of-type(25){
-            transform: translate(-50%, -50%) rotate(144deg);
-          }
-          &:nth-of-type(26){
-            transform: translate(-50%, -50%) rotate(150deg);
-          }
-          &:nth-of-type(27){
-            transform: translate(-50%, -50%) rotate(156deg);
-          }
-          &:nth-of-type(28){
-            transform: translate(-50%, -50%) rotate(162deg);
-          }
-          &:nth-of-type(29){
-            transform: translate(-50%, -50%) rotate(168deg);
-          }
-          &:nth-of-type(30){
-            transform: translate(-50%, -50%) rotate(174deg);
+            
+            &::before {
+              content: '';
+              background: #000;
+              border: 2px solid #000;
+              border-radius: 10px;
+              width: 90%;
+              height: 100%;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+            }
+    
+            &:nth-of-type(2){
+              transform: translate(-50%, -50%) rotate(6deg);
+            }
+            &:nth-of-type(3){
+              transform: translate(-50%, -50%) rotate(12deg);
+            }
+            &:nth-of-type(4){
+              transform: translate(-50%, -50%) rotate(18deg);
+            }
+            &:nth-of-type(5){
+              transform: translate(-50%, -50%) rotate(24deg);
+            }
+            &:nth-of-type(6){
+              transform: translate(-50%, -50%) rotate(30deg);
+            }
+            &:nth-of-type(7){
+              transform: translate(-50%, -50%) rotate(36deg);
+            }
+            &:nth-of-type(8){
+              transform: translate(-50%, -50%) rotate(42deg);
+            }
+            &:nth-of-type(9){
+              transform: translate(-50%, -50%) rotate(48deg);
+            }
+            &:nth-of-type(10){
+              transform: translate(-50%, -50%) rotate(54deg);
+            }
+            &:nth-of-type(11){
+              transform: translate(-50%, -50%) rotate(60deg);
+            }
+            &:nth-of-type(12){
+              transform: translate(-50%, -50%) rotate(66deg);
+            }
+            &:nth-of-type(13){
+              transform: translate(-50%, -50%) rotate(72deg);
+            }
+            &:nth-of-type(14){
+              transform: translate(-50%, -50%) rotate(78deg);
+            }
+            &:nth-of-type(15){
+              transform: translate(-50%, -50%) rotate(84deg);
+            }
+            &:nth-of-type(16){
+              transform: translate(-50%, -50%) rotate(90deg);
+            }
+            &:nth-of-type(17){
+              transform: translate(-50%, -50%) rotate(96deg);
+            }
+            &:nth-of-type(18){
+              transform: translate(-50%, -50%) rotate(102deg);
+            }
+            &:nth-of-type(19){
+              transform: translate(-50%, -50%) rotate(108deg);
+            }
+            &:nth-of-type(20){
+              transform: translate(-50%, -50%) rotate(114deg);
+            }
+            &:nth-of-type(21){
+              transform: translate(-50%, -50%) rotate(120deg);
+            }
+            &:nth-of-type(22){
+              transform: translate(-50%, -50%) rotate(126deg);
+            }
+            &:nth-of-type(23){
+              transform: translate(-50%, -50%) rotate(132deg);
+            }
+            &:nth-of-type(24){
+              transform: translate(-50%, -50%) rotate(138deg);
+            }
+            &:nth-of-type(25){
+              transform: translate(-50%, -50%) rotate(144deg);
+            }
+            &:nth-of-type(26){
+              transform: translate(-50%, -50%) rotate(150deg);
+            }
+            &:nth-of-type(27){
+              transform: translate(-50%, -50%) rotate(156deg);
+            }
+            &:nth-of-type(28){
+              transform: translate(-50%, -50%) rotate(162deg);
+            }
+            &:nth-of-type(29){
+              transform: translate(-50%, -50%) rotate(168deg);
+            }
+            &:nth-of-type(30){
+              transform: translate(-50%, -50%) rotate(174deg);
+            }
           }
         }
-      }
-
-      .hour-marks {
-        &> div {
-          width: 90%;
-          height: 3px;
-          background: #fff;
-          border-radius: 10px;
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          
-          &::before {
-            content: '';
-            background: #000;
-            border-radius: 10px;
-            border: 2px solid #000;
+  
+        &.hour {
+          &> div {
             width: 90%;
-            height: 100%;
+            height: 3px;
+            background: #fff;
+            border-radius: 10px;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-          }
-
-          &:nth-of-type(2){
-            transform: translate(-50%, -50%) rotate(30deg);
-          }
-
-          &:nth-of-type(3){
-            transform: translate(-50%, -50%) rotate(60deg);
-          }
-          
-          &:nth-of-type(4){
-            transform: translate(-50%, -50%) rotate(90deg);
-          }
-
-          &:nth-of-type(5){
-            transform: translate(-50%, -50%) rotate(120deg);
-          }
-
-          &:nth-of-type(6){
-            transform: translate(-50%, -50%) rotate(150deg);
+            
+            &::before {
+              content: '';
+              background: #000;
+              border-radius: 10px;
+              border: 2px solid #000;
+              width: 90%;
+              height: 100%;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+            }
+  
+            &:nth-of-type(2){
+              transform: translate(-50%, -50%) rotate(30deg);
+            }
+  
+            &:nth-of-type(3){
+              transform: translate(-50%, -50%) rotate(60deg);
+            }
+            
+            &:nth-of-type(4){
+              transform: translate(-50%, -50%) rotate(90deg);
+            }
+  
+            &:nth-of-type(5){
+              transform: translate(-50%, -50%) rotate(120deg);
+            }
+  
+            &:nth-of-type(6){
+              transform: translate(-50%, -50%) rotate(150deg);
+            }
           }
         }
       }
@@ -351,7 +353,7 @@ body {
               font-size: 16px;
               letter-spacing: 1px;
             }
-            
+
             #day{
               font-size: 32px;
               font-weight: 500;
