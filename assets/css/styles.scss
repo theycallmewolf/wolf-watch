@@ -40,17 +40,27 @@ body {
     justify-content: center;
     
     .display {
-      width: 300px;
+      width: 330px;
       height: 300px;
       background: #000;
-      border: 10px solid #000;
+      border: 10px solid #262626;
       border-radius: 36px;
       position: relative;
       transform: rotate(-90deg);
       box-shadow: -36px 0px 20px -20px #b29f7e;
 
+      &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 26px;
+        background: rgba(255,255,255, 0);
+        background: linear-gradient(160deg, rgba(255, 255, 255, .2) 0%, rgba(255, 255, 255, 0) 100%);
+      }
+
       .hand {
-        width: 88%;
+        width: 80%;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -132,7 +142,7 @@ body {
       .marks {
         &.millisecond {
           &> div {
-            width: 90%;
+            width: 82%;
             height: 2px;
             background: #313643;
             position: absolute;
@@ -335,7 +345,7 @@ body {
   
         &.hour {
           &> div {
-            width: 90%;
+            width: 82%;
             height: 3px;
             background: #fff;
             border-radius: 10px;
@@ -547,8 +557,8 @@ body {
             font-size: 14px;
             display: block;
             position: absolute;
-            top: 29px;
-            right: 68px;
+            top: 33px;
+            right: 76px;
             transform: rotate(30deg);
           }
 
@@ -557,20 +567,23 @@ body {
             width: 21px;
             height: 21px;
             position: absolute;
-            top: 36px;
-            right: 20px;
+            top: 34px;
+            right: 34px;
             transform: rotate(90deg);
           }
 
           .graph {
             position: absolute;
-            top: 0;
-            left: 0;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            transform: translate(-50%, -50%);
           }
 
           .ring {
             transform-origin: 50%;
-            transform: scale(1) rotate(-50deg);
+            transform: scale(1) rotate(-46deg);
 
             circle {
               fill: none;
@@ -601,8 +614,8 @@ body {
             font-size: 18px;
             display: block;
             position: absolute;
-            bottom: 39px;
-            right: 23px;
+            bottom: 34px;
+            right: 34px;
             transform: rotate(136deg);
           }
           
@@ -611,13 +624,13 @@ body {
             font-size: 14px;
             display: block;
             position: absolute;
-            bottom: 109px;
-            right: 13px;
+            bottom: 110px;
+            right: 30px;
             transform: rotate(116deg);
 
             &:last-of-type {
-              bottom: 21px;
-              right: 81px;
+              bottom: 22px;
+              right: 96px;
               transform: rotate(150deg);
             }
           }
@@ -633,9 +646,10 @@ body {
           }
 
           .graph {
-            position: absolute;
-            top: 0;
-            left: 0;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
           }
 
           .ring {
@@ -680,9 +694,9 @@ body {
             font-size: 14px;
             display: block;
             position: absolute;
-            bottom: 260px;
-            right: 220px;
-            transform: rotate(140deg);
+            bottom: 262px;
+            right: 234px;
+            transform: rotate(142deg);
           }
 
           .icon {
@@ -690,8 +704,8 @@ body {
             width: 21px;
             height: 21px;
             position: absolute;
-            top: 36px;
-            left: 20px;
+            top: 34px;
+            left: 34px;
             transform: rotate(90deg);
           }
 
@@ -699,6 +713,8 @@ body {
             position: absolute;
             top: 0;
             left: 0;
+            width: 100%;
+            height: 100%;
           }
 
           .ring {
