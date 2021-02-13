@@ -13,10 +13,6 @@ body {
   line-height: 1;
 }
 
-#sprite-sheet {
-  display: none;
-}
-
 @keyframes ringProgress {
   0% {
     stroke-dasharray: 0 100;
@@ -29,6 +25,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 0;
+  transition: opacity 1000ms ease-in-out;
 }
 
 #watch .container {
@@ -389,7 +387,7 @@ body {
 
 #watch .container .display .complication#bottom span #activity-rings .completed {
   stroke-linecap: round;
-  animation: ringProgress 1s ease-in-out forwards;
+  animation: ringProgress 1500ms ease-in-out forwards;
 }
 
 #watch .container .display .complication#bottom span #activity-rings circle {
@@ -453,5 +451,9 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+#watch.show {
+  opacity: 1;
 }
 /*# sourceMappingURL=styles.css.map */

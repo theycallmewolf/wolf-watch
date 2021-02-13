@@ -13,10 +13,6 @@ body {
   line-height: 1;
 }
 
-#sprite-sheet {
-  display: none;
-}
-
 @keyframes ringProgress {
   0% {
       stroke-dasharray: 0 100;
@@ -29,6 +25,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 0;
+  transition: opacity 1000ms ease-in-out;
   
   .container {
     width: 100%;
@@ -100,6 +98,7 @@ body {
         }
 
         &#minute {
+
           .fat {
             width: 80%;
           }
@@ -361,7 +360,7 @@ body {
               }
               .completed {
                 stroke-linecap: round;
-                animation: ringProgress 1s ease-in-out forwards;
+                animation: ringProgress 1500ms ease-in-out forwards;
               }
               circle {
                   fill: none;
@@ -432,5 +431,9 @@ body {
         transform: translate(-50%, -50%);
       }
     }
+  }
+
+  &.show{
+    opacity: 1;
   }
 }

@@ -36,3 +36,8 @@ setInterval(() => {
 
   updateClock(hours, minutes, seconds);
 }, 1000);
+
+const watch = document.getElementById('watch');
+setTimeout(() => {
+  watch.classList.add('show');
+}, 1000);
