@@ -48,6 +48,7 @@ body {
   border-radius: 36px;
   position: relative;
   transform: rotate(-90deg);
+  box-shadow: -36px 0px 20px -20px #b29f7e;
 }
 
 #watch .container .display .hand {
