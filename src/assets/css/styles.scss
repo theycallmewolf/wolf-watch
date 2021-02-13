@@ -17,6 +17,12 @@ body {
   display: none;
 }
 
+@keyframes ringProgress {
+  0% {
+      stroke-dasharray: 0 100;
+  }
+}
+
 #watch {
   width: 100%;
   height: 100%;
@@ -28,7 +34,7 @@ body {
     width: 100%;
     height: 100%;
     max-width: 360px;
-    height: 640px;
+    max-height: 640px;
     
     display: flex;
     align-items: center;
@@ -335,7 +341,63 @@ body {
         }
         
         &#bottom{
+          background: #000;
           left: 30%;
+
+          span {
+            width: 100%;
+            height: 100%;
+            transform: rotate(90deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            #activity-rings {
+              height: 100%;
+              width: 100%;
+          
+              .ring {
+                transform-origin: 50%;
+              }
+              .completed {
+                stroke-linecap: round;
+                animation: ringProgress 1s ease-in-out forwards;
+              }
+              circle {
+                  fill: none;
+              }
+
+              $color-ring: #e5e5e5;
+              .ring1 {
+                .background {
+                  stroke: transparentize($color-ring, 0.9);
+                }
+                .completed {
+                  stroke: $color-ring;
+                  animation-delay: 1000ms;
+                }  
+              }
+              .ring2 {
+                .background {
+                  stroke: transparentize($color-ring, 0.9);
+                }
+                .completed {
+                  stroke: $color-ring;
+                  animation-delay: 1200ms;
+                }
+              }
+              .ring3 {
+                .background {
+                  stroke: transparentize($color-ring, 0.9);
+                }
+                .completed {
+                  stroke: $color-ring;
+                  animation-delay: 1400ms;
+                }
+              }
+            }
+            
+          }
         }
 
         &#left {
