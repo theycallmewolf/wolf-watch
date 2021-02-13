@@ -1,0 +1,9 @@
+{
+  "name": "watch",
+  "version": "0.0.1",
+  "description": "lets recreate a apple watch face",
+  "main": "index.js",
+  "author": "bruno <bruno@theycallmewolf.com>",
+  "license": "MIT",
+  "private": false
+}
