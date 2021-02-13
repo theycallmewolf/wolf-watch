@@ -308,14 +308,23 @@ body {
 }
 
 #watch .container .display .complication {
-  background: #171717;
   width: 70px;
   height: 70px;
-  border-radius: 50%;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  background: #171717;
+  background-repeat: no-repeat;
+  border: none;
+  border-radius: 50%;
+  overflow: hidden;
+  outline: none;
+  cursor: pointer;
+}
+
+#watch .container .display .complication:focus {
+  background: #252525;
 }
 
 #watch .container .display .complication#top {
