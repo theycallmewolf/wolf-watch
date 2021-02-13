@@ -590,7 +590,26 @@ body {
   transform: translate(-50%, -50%);
 }
 
-#watch .container .display .complication.outside#top-left svg {
+#watch .container .display .complication.outside#top-left .value {
+  color: #e5e5e5;
+  display: block;
+  position: absolute;
+  top: 29px;
+  right: 68px;
+  transform: rotate(30deg);
+}
+
+#watch .container .display .complication.outside#top-left .icon {
+  fill: #e5e5e5;
+  width: 21px;
+  height: 21px;
+  position: absolute;
+  top: 36px;
+  right: 20px;
+  transform: rotate(90deg);
+}
+
+#watch .container .display .complication.outside#top-left .graph {
   position: absolute;
   top: 0;
   left: 0;
@@ -598,6 +617,7 @@ body {
 
 #watch .container .display .complication.outside#top-left .ring {
   transform-origin: 50%;
+  transform: scale(1) rotate(-50deg);
 }
 
 #watch .container .display .complication.outside#top-left .ring circle {
@@ -606,7 +626,7 @@ body {
 }
 
 #watch .container .display .complication.outside#top-left .ring .background {
-  stroke: rgba(46, 46, 46, 0.4);
+  stroke: rgba(49, 54, 67, 0.6);
 }
 
 #watch .container .display .complication.outside#top-left .ring .completed {

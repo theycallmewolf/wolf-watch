@@ -541,8 +541,27 @@ body {
           width: 110%;
           height: 110%;
           transform: translate(-50%, -50%);
+          
+          .value {
+            color: #e5e5e5;
+            display: block;
+            position: absolute;
+            top: 29px;
+            right: 68px;
+            transform: rotate(30deg);
+          }
 
-          svg {
+          .icon {
+            fill: #e5e5e5;
+            width: 21px;
+            height: 21px;
+            position: absolute;
+            top: 36px;
+            right: 20px;
+            transform: rotate(90deg);
+          }
+
+          .graph {
             position: absolute;
             top: 0;
             left: 0;
@@ -550,6 +569,7 @@ body {
 
           .ring {
             transform-origin: 50%;
+            transform: scale(1) rotate(-50deg);
 
             circle {
               fill: none;
@@ -557,7 +577,7 @@ body {
             }
             
             .background {
-              stroke: transparentize(#2e2e2e, 0.6);
+              stroke: transparentize(#313643, 0.4);
             }
             .completed {
               stroke: #e5e5e5;
