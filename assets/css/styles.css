@@ -5,8 +5,8 @@
 }
 
 body {
-  background: black;
-  background: linear-gradient(0deg, black 0%, #1b1f24 100%);
+  background: #d9c6a5;
+  background: linear-gradient(0deg, #d9c6a5 0%, #fff1dc 100%);
   width: 100vw;
   height: 100vh;
   font-family: 'Roboto', sans-serif;
