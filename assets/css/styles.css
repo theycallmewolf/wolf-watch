@@ -395,29 +395,29 @@ body {
   fill: none;
 }
 
-#watch .container .display .complication#bottom span #activity-rings .ring1 .background {
+#watch .container .display .complication#bottom span #activity-rings .move-ring .background {
   stroke: rgba(229, 229, 229, 0.1);
 }
 
-#watch .container .display .complication#bottom span #activity-rings .ring1 .completed {
+#watch .container .display .complication#bottom span #activity-rings .move-ring .completed {
   stroke: #e5e5e5;
   animation-delay: 1000ms;
 }
 
-#watch .container .display .complication#bottom span #activity-rings .ring2 .background {
+#watch .container .display .complication#bottom span #activity-rings .exercise-ring .background {
   stroke: rgba(229, 229, 229, 0.1);
 }
 
-#watch .container .display .complication#bottom span #activity-rings .ring2 .completed {
+#watch .container .display .complication#bottom span #activity-rings .exercise-ring .completed {
   stroke: #e5e5e5;
   animation-delay: 1200ms;
 }
 
-#watch .container .display .complication#bottom span #activity-rings .ring3 .background {
+#watch .container .display .complication#bottom span #activity-rings .stand-ring .background {
   stroke: rgba(229, 229, 229, 0.1);
 }
 
-#watch .container .display .complication#bottom span #activity-rings .ring3 .completed {
+#watch .container .display .complication#bottom span #activity-rings .stand-ring .completed {
   stroke: #e5e5e5;
   animation-delay: 1400ms;
 }

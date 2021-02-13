@@ -368,7 +368,7 @@ body {
               }
 
               $color-ring: #e5e5e5;
-              .ring1 {
+              .move-ring {
                 .background {
                   stroke: transparentize($color-ring, 0.9);
                 }
@@ -377,7 +377,7 @@ body {
                   animation-delay: 1000ms;
                 }  
               }
-              .ring2 {
+              .exercise-ring {
                 .background {
                   stroke: transparentize($color-ring, 0.9);
                 }
@@ -386,7 +386,7 @@ body {
                   animation-delay: 1200ms;
                 }
               }
-              .ring3 {
+              .stand-ring {
                 .background {
                   stroke: transparentize($color-ring, 0.9);
                 }

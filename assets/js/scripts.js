@@ -51,3 +51,26 @@ setInterval(() => {
 setTimeout(() => {
   document.getElementById('watch').classList.add('show');
 }, 1000);
+
+//
+function randomActivityRings() {
+  const moveRing = document.querySelector('.move-ring .completed');
+  const exerciseRing = document.querySelector('.exercise-ring .completed');
+  const standRing = document.querySelector('.stand-ring .completed');
+
+  const randomValue1 = getRandomInt(80);
+  const randomValue2 = getRandomInt(randomValue1);
+  const randomValue3 = getRandomInt(90);
+
+  console.log({ randomValue1, randomValue2, randomValue3 });
+
+  moveRing.setAttribute('stroke-dasharray', `${randomValue1}, 100`);
+  exerciseRing.setAttribute('stroke-dasharray', `${randomValue2}, 100`);
+  standRing.setAttribute('stroke-dasharray', `${randomValue3}, 100`);
+
+  function getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+  }
+}
+
+randomActivityRings();
