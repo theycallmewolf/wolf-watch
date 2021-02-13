@@ -440,6 +440,8 @@ body {
 
 #watch .container .display .complication#left svg {
   fill: #e5e5e5;
+  width: 40px;
+  height: 40px;
 }
 
 #watch .container .display #main-center {
