@@ -26,7 +26,8 @@ body {
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: opacity 1000ms ease-in-out;
+  margin-top: 20px;
+  transition: opacity 1000ms ease-in-out, margin-top 1000ms ease-in-out;
   
   .container {
     width: 100%;
@@ -436,5 +437,6 @@ body {
 
   &.show{
     opacity: 1;
+    margin-top: 0;
   }
 }
