@@ -346,29 +346,36 @@ body {
 
 #watch .container .display .complication#right {
   top: 70%;
+  position: relative;
 }
 
-#watch .container .display .complication#right span {
+#watch .container .display .complication#right > span {
   transform: rotate(90deg);
   color: #fff;
-}
-
-#watch .container .display .complication#right span > span {
+  width: 100%;
+  height: 100%;
   position: absolute;
-  text-transform: uppercase;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
 }
 
-#watch .container .display .complication#right span #weekday {
+#watch .container .display .complication#right > span > span {
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+}
+
+#watch .container .display .complication#right > span #weekday {
   color: #636d84;
   font-size: 16px;
   letter-spacing: 1px;
-  top: 37%;
-  left: 52%;
 }
 
-#watch .container .display .complication#right span #day {
-  top: 27%;
-  left: 12%;
+#watch .container .display .complication#right > span #day {
   font-size: 32px;
   font-weight: 500;
 }
