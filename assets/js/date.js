@@ -1,23 +1,4 @@
 //
-// adjust viewport units on mobile
-const windowHeight = window.innerHeight;
-const current_scroll = window.scrollY;
-
-let vh = windowHeight * 0.01;
-document.documentElement.style.setProperty('--vh', `${vh}px`);
-
-window.addEventListener('resize', () => {
-  let vh = windowHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
-});
-
-//
-// initial fade-in
-setTimeout(() => {
-  document.getElementById('watch').classList.add('show');
-}, 1000);
-
-//
 // handling date
 function updateClock(hours, minutes, seconds, weekday, month) {
   const weekDays = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
@@ -118,31 +99,3 @@ setInterval(() => {
 
   updateClock(hours, minutes, seconds, weekday, month);
 }, 1000);
-
-//
-// handling Activity Rings
-function randomActivityRings() {
-  const moveRing = document.querySelector('.move-ring .completed');
-  const exerciseRing = document.querySelector('.exercise-ring .completed');
-  const standRing = document.querySelector('.stand-ring .completed');
-
-  const random1 = getRandomInt(80);
-  const random2 = getRandomInt(random1);
-  const random3 = getRandomInt(90);
-
-  moveRing.setAttribute('stroke-dasharray', `${random1}, 100`);
-  exerciseRing.setAttribute('stroke-dasharray', `${random2}, 100`);
-  standRing.setAttribute('stroke-dasharray', `${random3}, 100`);
-}
-
-function getRandomInt(max) {
-  return Math.floor(Math.random() * Math.floor(max));
-}
-
-const bottomComplicationButton = document.getElementById('bottom');
-
-randomActivityRings();
-
-bottomComplicationButton.addEventListener('click', () => {
-  randomActivityRings();
-});
