@@ -1,7 +1,7 @@
+import { weekDays } from './utils/weekdays';
 //
 // handling date
-function updateClock(hours, minutes, seconds, weekday, month) {
-  const weekDays = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+export const updateClock = (hours, minutes, seconds, weekday, month) => {
   const hourHand = document.getElementById('hour');
   const minuteHand = document.getElementById('minute');
   const secondHand = document.getElementById('second');
@@ -87,15 +87,4 @@ function updateClock(hours, minutes, seconds, weekday, month) {
 
   weekdayDisplay.innerHTML = w;
   dayDisplay.innerHTML = M;
-}
-
-setInterval(() => {
-  const time = new Date();
-  const hours = time.getHours();
-  const minutes = time.getMinutes();
-  const seconds = time.getSeconds();
-  const weekday = time.getDay();
-  const month = time.getDate();
-
-  updateClock(hours, minutes, seconds, weekday, month);
-}, 1000);
+};
