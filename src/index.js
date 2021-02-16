@@ -31,3 +31,5 @@ const bottomComplicationButton = document.getElementById('bottom');
 bottomComplicationButton.addEventListener('click', () => {
   randomActivityRings();
 });
+
+console.log('made by Wolf');
