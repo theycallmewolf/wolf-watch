@@ -4,18 +4,20 @@
   "description": "lets recreate a apple watch face",
   "main": "index.js",
   "scripts": {
-    "start": "webpack --config webpack.config.js"
+    "start": "webpack --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
   },
   "author": "bruno <bruno@theycallmewolf.com>",
   "license": "MIT",
   "private": false,
   "devDependencies": {
-    "css-loader": "^5.0.2",
+    "css-loader": "^5.0.2", 
     "html-webpack-plugin": "^5.1.0",
     "sass": "^1.32.7",
     "sass-loader": "^11.0.1",
     "style-loader": "^2.0.0",
     "webpack": "^5.22.0",
-    "webpack-cli": "^4.5.0"
+    "webpack-cli": "^4.5.0",
+    "webpack-merge": "^5.7.3"
   }
 }
