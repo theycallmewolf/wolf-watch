@@ -3,6 +3,8 @@ import { fadeIn } from './js/fade-in';
 import { updateClock } from './js/clock';
 import { randomActivityRings } from './js/rings';
 
+import './css/styles.scss';
+
 // viewport height set
 setViewportHeightUnit();
 window.addEventListener('resize', setViewportHeightUnit);
