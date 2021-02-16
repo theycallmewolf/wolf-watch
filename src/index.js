@@ -1,9 +1,8 @@
-import { setViewportHeightUnit } from './js/viewport';
+import './css/styles.scss';
 import { fadeIn } from './js/fade-in';
+import { setViewportHeightUnit } from './js/viewport';
 import { updateClock } from './js/clock';
 import { randomActivityRings } from './js/rings';
-
-import './css/styles.scss';
 
 // viewport height set
 setViewportHeightUnit();
