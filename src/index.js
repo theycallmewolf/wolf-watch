@@ -9,7 +9,9 @@ setViewportHeightUnit();
 window.addEventListener('resize', setViewportHeightUnit);
 
 // initial watch fade-in
-fadeIn();
+setTimeout(() => {
+  fadeIn();
+}, 1000);
 
 // clock
 setInterval(() => {
