@@ -1,0 +1,777 @@
+#watch {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  margin-top: 20px;
+  transition: opacity 1000ms ease-in-out, margin-top 1000ms ease-in-out;
+
+  .container {
+    width: 100%;
+    height: 100%;
+    max-width: 360px;
+    max-height: 640px;
+    position: relative;
+
+    &>div {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .band {
+      width: 220px;
+      height: 400px;
+      border-radius: 10px;
+      position: absolute;
+      overflow: hidden;
+      z-index: 1;
+      background: $c-black;
+      background: linear-gradient(90deg, $c-ultra-grey 0%, $c-black 100%);
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0);
+        background: radial-gradient(circle, $c-ultra-grey 70%, $c-black 100%);
+      }
+    }
+    
+    .display {
+      width: 330px;
+      height: 300px;
+      background: $c-black;
+      border: 10px solid $c-ultra-grey;
+      border-radius: 36px;
+      position: relative;
+      transform: translate(-50%, -50%) rotate(-90deg);
+      z-index: 2;
+      // box-shadow: -36px 0px 20px -20px #b29f7e;
+      // box-shadow: -36px 0px 20px -30px #000000;
+
+      // &::after {
+      //   content: '';
+      //   position: absolute;
+      //   width: 100%;
+      //   height: 100%;
+      //   border-radius: 26px;
+      //   background: rgba(255,255,255, 0);
+      //   background: linear-gradient(160deg, rgba(255, 255, 255, .2) 0%, rgba(255, 255, 255, 0) 100%);
+      // }
+
+      .crown {
+        width: 60px;
+        height: 16px;
+        position: absolute;
+        right: 50px;
+        bottom: -26px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        background: $c-black;
+        background: linear-gradient(90deg, $c-dark-grey 0%, $c-black 100%);
+      }
+
+      .hand {
+        width: 80%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 12px;
+        transform: translate(-50%, -50%);
+
+        &>div { 
+          width: 50%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          right: 5px;
+          border-radius: 10px;
+
+          .center {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: $c-white;
+            position: absolute;
+            top: 50%;
+            left: -1px;
+            transform: translate(0, -50%);
+          }
+
+          .thin {
+            background: $c-white;
+            width: 100%;
+            height: 4px;
+            border-radius: 2px;
+            position: absolute;
+            top:50%;
+            left: 0;
+            transform: translate(0, -50%);
+          }
+          
+          .fat {
+            background: $c-white;
+            width: 70%;
+            height: 100%;
+            border-radius: 8px;
+            position: absolute;
+            top:50%;
+            right: 0;
+            transform: translate(0, -50%);
+            box-shadow: 0 0 10px $c-black;
+          }
+        }
+
+        &#minute {
+
+          .fat {
+            width: 80%;
+          }
+        }
+
+        &#hour {
+          width: 50%;
+        }
+        
+        &#second {
+          .center {
+            background: $c-grey;
+            width: 10px;
+            height: 10px;
+            left: 0;
+          }
+
+          .thin {
+            background: $c-grey;
+            left: -20px;
+            width: 120%;
+            height: 2px;
+            box-shadow: 0 0 5px $c-black;
+          }
+        }
+      }
+
+      .marks {
+        &.millisecond {
+          &> div {
+            width: 82%;
+            height: 2px;
+            background: $c-medium-grey;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            
+            &::before {
+              content: '';
+              background: $c-black;
+              border: 2px solid $c-black;
+              border-radius: 10px;
+              width: 90%;
+              height: 100%;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+            }
+    
+            &:nth-of-type(2){
+              transform: translate(-50%, -50%) rotate(3deg);
+            }
+            &:nth-of-type(3){
+              transform: translate(-50%, -50%) rotate(6deg);
+            }
+            &:nth-of-type(4){
+              transform: translate(-50%, -50%) rotate(9deg);
+            }
+            &:nth-of-type(5){
+              transform: translate(-50%, -50%) rotate(12deg);
+            }
+            &:nth-of-type(6){
+              transform: translate(-50%, -50%) rotate(15deg);
+            }
+            &:nth-of-type(7){
+              transform: translate(-50%, -50%) rotate(18deg);
+            }
+            &:nth-of-type(8){
+              transform: translate(-50%, -50%) rotate(21deg);
+            }
+            &:nth-of-type(9){
+              transform: translate(-50%, -50%) rotate(24deg);
+            }
+            &:nth-of-type(10){
+              transform: translate(-50%, -50%) rotate(27deg);
+            }
+            &:nth-of-type(11){
+              transform: translate(-50%, -50%) rotate(30deg);
+            }
+            &:nth-of-type(12){
+              transform: translate(-50%, -50%) rotate(33deg);
+            }
+            &:nth-of-type(13){
+              transform: translate(-50%, -50%) rotate(36deg);
+            }
+            &:nth-of-type(14){
+              transform: translate(-50%, -50%) rotate(39deg);
+            }
+            &:nth-of-type(15){
+              transform: translate(-50%, -50%) rotate(42deg);
+            }
+            &:nth-of-type(16){
+              transform: translate(-50%, -50%) rotate(45deg);
+            }
+            &:nth-of-type(17){
+              transform: translate(-50%, -50%) rotate(48deg);
+            }
+            &:nth-of-type(18){
+              transform: translate(-50%, -50%) rotate(51deg);
+            }
+            &:nth-of-type(19){
+              transform: translate(-50%, -50%) rotate(54deg);
+            }
+            &:nth-of-type(20){
+              transform: translate(-50%, -50%) rotate(57deg);
+            }
+            &:nth-of-type(21){
+              transform: translate(-50%, -50%) rotate(60deg);
+            }
+            &:nth-of-type(22){
+              transform: translate(-50%, -50%) rotate(63deg);
+            }
+            &:nth-of-type(23){
+              transform: translate(-50%, -50%) rotate(66deg);
+            }
+            &:nth-of-type(24){
+              transform: translate(-50%, -50%) rotate(69deg);
+            }
+            &:nth-of-type(25){
+              transform: translate(-50%, -50%) rotate(72deg);
+            }
+            &:nth-of-type(26){
+              transform: translate(-50%, -50%) rotate(75deg);
+            }
+            &:nth-of-type(27){
+              transform: translate(-50%, -50%) rotate(78deg);
+            }
+            &:nth-of-type(28){
+              transform: translate(-50%, -50%) rotate(81deg);
+            }
+            &:nth-of-type(29){
+              transform: translate(-50%, -50%) rotate(84deg);
+            }
+            &:nth-of-type(30){
+              transform: translate(-50%, -50%) rotate(87deg);
+            }
+            &:nth-of-type(31){
+              transform: translate(-50%, -50%) rotate(90deg);
+            }
+            &:nth-of-type(32){
+              transform: translate(-50%, -50%) rotate(93deg);
+            }
+            &:nth-of-type(33){
+              transform: translate(-50%, -50%) rotate(96deg);
+            }
+            &:nth-of-type(34){
+              transform: translate(-50%, -50%) rotate(99deg);
+            }
+            &:nth-of-type(35){
+              transform: translate(-50%, -50%) rotate(102deg);
+            }
+            &:nth-of-type(36){
+              transform: translate(-50%, -50%) rotate(105deg);
+            }
+            &:nth-of-type(37){
+              transform: translate(-50%, -50%) rotate(108deg);
+            }
+            &:nth-of-type(38){
+              transform: translate(-50%, -50%) rotate(111deg);
+            }
+            &:nth-of-type(39){
+              transform: translate(-50%, -50%) rotate(114deg);
+            }
+            &:nth-of-type(40){
+              transform: translate(-50%, -50%) rotate(117deg);
+            }
+            &:nth-of-type(41){
+              transform: translate(-50%, -50%) rotate(120deg);
+            }
+            &:nth-of-type(42){
+              transform: translate(-50%, -50%) rotate(123deg);
+            }
+            &:nth-of-type(43){
+              transform: translate(-50%, -50%) rotate(126deg);
+            }
+            &:nth-of-type(44){
+              transform: translate(-50%, -50%) rotate(129deg);
+            }
+            &:nth-of-type(45){
+              transform: translate(-50%, -50%) rotate(132deg);
+            }
+            &:nth-of-type(46){
+              transform: translate(-50%, -50%) rotate(135deg);
+            }
+            &:nth-of-type(47){
+              transform: translate(-50%, -50%) rotate(138deg);
+            }
+            &:nth-of-type(48){
+              transform: translate(-50%, -50%) rotate(141deg);
+            }
+            &:nth-of-type(49){
+              transform: translate(-50%, -50%) rotate(144deg);
+            }
+            &:nth-of-type(50){
+              transform: translate(-50%, -50%) rotate(147deg);
+            }
+            &:nth-of-type(51){
+              transform: translate(-50%, -50%) rotate(150deg);
+            }
+            &:nth-of-type(52){
+              transform: translate(-50%, -50%) rotate(153deg);
+            }
+            &:nth-of-type(53){
+              transform: translate(-50%, -50%) rotate(156deg);
+            }
+            &:nth-of-type(54){
+              transform: translate(-50%, -50%) rotate(159deg);
+            }
+            &:nth-of-type(55){
+              transform: translate(-50%, -50%) rotate(162deg);
+            }
+            &:nth-of-type(56){
+              transform: translate(-50%, -50%) rotate(165deg);
+            }
+            &:nth-of-type(57){
+              transform: translate(-50%, -50%) rotate(168deg);
+            }
+            &:nth-of-type(58){
+              transform: translate(-50%, -50%) rotate(171deg);
+            }
+            &:nth-of-type(59){
+              transform: translate(-50%, -50%) rotate(174deg);
+            }
+            &:nth-of-type(60){
+              transform: translate(-50%, -50%) rotate(177deg);
+            }
+          }
+        }
+  
+        &.hour {
+          &> div {
+            width: 82%;
+            height: 3px;
+            background: $c-white;
+            border-radius: 10px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            
+            &::before {
+              content: '';
+              background: $c-black;
+              border-radius: 10px;
+              border: 2px solid $c-black;
+              width: 90%;
+              height: 100%;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+            }
+  
+            &:nth-of-type(2){
+              transform: translate(-50%, -50%) rotate(30deg);
+            }
+  
+            &:nth-of-type(3){
+              transform: translate(-50%, -50%) rotate(60deg);
+            }
+            
+            &:nth-of-type(4){
+              transform: translate(-50%, -50%) rotate(90deg);
+            }
+  
+            &:nth-of-type(5){
+              transform: translate(-50%, -50%) rotate(120deg);
+            }
+  
+            &:nth-of-type(6){
+              transform: translate(-50%, -50%) rotate(150deg);
+            }
+          }
+        }
+      }
+
+      .complication.inside {
+        width: 70px;
+        height: 70px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        
+        background: $c-ultra-grey;
+        background-repeat:no-repeat;
+        border: none;
+        border-radius: 50%;
+        overflow: hidden;
+        outline:none;
+        cursor: pointer;
+
+        &:focus{
+          background: $c-dark-grey;
+        }
+
+        &#top{
+          left: 70%;
+          background: $c-black;
+          font-size: 18px;
+          font-weight: 500;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          color: $c-white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          span {
+            transform: rotate(90deg);
+          }
+        }
+
+        &#right{
+          top: 70%;
+
+          >span {
+            transform: rotate(90deg);
+            color: $c-white;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            justify-content: center;
+            
+            &>span {
+              text-transform: uppercase;
+              width: 100%;
+              text-align: center;
+            }
+            
+            #weekday{
+              color: $c-grey;
+              font-size: 16px;
+              letter-spacing: 1px;
+            }
+
+            #day{
+              font-size: 32px;
+              font-weight: 500;
+            }
+          }
+        }
+        
+        &#bottom{
+          background: $c-black;
+          left: 30%;
+
+          span {
+            width: 100%;
+            height: 100%;
+            transform: rotate(90deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            #activity-rings {
+              height: 100%;
+              width: 100%;
+          
+              .ring {
+                transform-origin: 50%;
+              }
+              .completed {
+                stroke-linecap: round;
+                animation: ringProgress 1500ms ease-in-out forwards;
+              }
+              circle {
+                  fill: none;
+              }
+
+              .move-ring {
+                .background {
+                  stroke: transparentize($c-pastel-light, 0.9);
+                }
+                .completed {
+                  stroke: $c-pastel-light;
+                  animation-delay: 1000ms;
+                }  
+              }
+              .exercise-ring {
+                .background {
+                  stroke: transparentize($c-pastel-light, 0.9);
+                }
+                .completed {
+                  stroke: $c-pastel-light;
+                  animation-delay: 1200ms;
+                }
+              }
+              .stand-ring {
+                .background {
+                  stroke: transparentize($c-pastel-light, 0.9);
+                }
+                .completed {
+                  stroke: $c-pastel-light;
+                  animation-delay: 1400ms;
+                }
+              }
+            }
+            
+          }
+        }
+
+        &#left {
+          top: 30%;
+
+          span {
+            display: block;
+            width: 100%;
+            height: 100%;
+            transform: rotate(90deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+          }
+          svg {
+            fill: $c-pastel-light;
+            width: 40px;
+            height: 40px;
+          }
+        }
+      }
+
+      .complication.outside {
+        &#top-left {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 110%;
+          height: 110%;
+          transform: translate(-50%, -50%);
+          
+          .value-xs {
+            color: $c-pastel-light;
+            font-size: 14px;
+            display: block;
+            position: absolute;
+            top: 33px;
+            right: 76px;
+            transform: rotate(30deg);
+          }
+
+          .icon {
+            fill: $c-pastel-light;
+            width: 21px;
+            height: 21px;
+            position: absolute;
+            top: 34px;
+            right: 34px;
+            transform: rotate(90deg);
+          }
+
+          .graph {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            transform: translate(-50%, -50%);
+          }
+
+          .ring {
+            transform-origin: 50%;
+            transform: scale(1) rotate(-46deg);
+
+            circle {
+              fill: none;
+              stroke-linecap: round;
+            }
+            
+            .background {
+              stroke: $c-ultra-grey;
+            }
+            .completed {
+              stroke: $c-pastel-light;
+              animation-delay: 1000ms;
+            }  
+          }
+          
+        }
+
+        &#top-right {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 110%;
+          height: 110%;
+          transform: translate(-50%, -50%);
+          
+          .value-lg {
+            color: $c-pastel-light;
+            font-size: 18px;
+            display: block;
+            position: absolute;
+            bottom: 34px;
+            right: 34px;
+            transform: rotate(136deg);
+          }
+          
+          .value-xs {
+            color: $c-pastel-light;
+            font-size: 14px;
+            display: block;
+            position: absolute;
+            bottom: 110px;
+            right: 30px;
+            transform: rotate(116deg);
+
+            &:last-of-type {
+              bottom: 22px;
+              right: 96px;
+              transform: rotate(150deg);
+            }
+          }
+
+          .icon {
+            fill: $c-pastel-light;
+            width: 21px;
+            height: 21px;
+            position: absolute;
+            top: 36px;
+            right: 20px;
+            transform: rotate(90deg);
+          }
+
+          .graph {
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+          }
+
+          .ring {
+            transform-origin: 50%;
+            transform: scale(1) rotate(20deg);
+
+            circle {
+              fill: none;
+              stroke-linecap: round;
+            }
+            
+            .background {
+              stroke: $c-ultra-grey;
+            }
+            
+            .completed {
+              stroke: $c-pastel-light;
+              animation-delay: 1000ms;
+            }
+
+            .dot {
+              fill: $c-pastel-light;
+              stroke: $c-black;
+              stroke-width: 0.2px;
+              position: absolute;
+              top: 0;
+              left: 0;
+            }
+          }
+        }
+
+        &#bottom-left {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 110%;
+          height: 110%;
+          transform: translate(-50%, -50%);
+          
+          .value-xs {
+            color: $c-pastel-light;
+            font-size: 14px;
+            display: block;
+            position: absolute;
+            bottom: 262px;
+            right: 234px;
+            transform: rotate(142deg);
+          }
+
+          .icon {
+            fill: $c-pastel-light;
+            width: 21px;
+            height: 21px;
+            position: absolute;
+            top: 34px;
+            left: 34px;
+            transform: rotate(90deg);
+          }
+
+          .graph {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+          }
+
+          .ring {
+            transform-origin: 50%;
+            transform: scale(1) rotate(200deg);
+
+            circle {
+              fill: none;
+              stroke-linecap: round;
+            }
+            
+            .background {
+              stroke: $c-ultra-grey;
+            }
+            
+            .completed {
+              stroke: $c-pastel-light;
+              animation-delay: 1000ms;
+            }
+          }
+          
+        }
+      }
+
+      #main-center {
+        background: $c-black;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  &.show{
+    opacity: 1;
+    margin-top: 0;
+  }
+}
