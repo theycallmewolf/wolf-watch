@@ -1,4 +1,5 @@
 const path = require('path');
+const Dotenv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -36,5 +37,6 @@ module.exports = {
       template: './src/template.html',
       title: 'Wolf Watch',
     }),
+    new Dotenv(),
   ],
 };
