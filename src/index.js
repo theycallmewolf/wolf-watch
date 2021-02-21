@@ -1,19 +1,22 @@
 import './css/styles.scss';
-import { fadeIn } from './js/fade-in';
-import { setViewportHeightUnit } from './js/viewport';
-import { updateClock } from './js/clock';
-import { randomActivityRings } from './js/rings';
-import { getWeather, getLocation } from './js/weather';
+import { fadeIn } from './effects/fade-in';
+import { setViewportHeightUnit } from './utils/viewport';
+import { updateClock } from './services/UpdateClock';
+import { randomActivityRings } from './services/LoadActivityRings';
+import { getWeather, getLocation } from './services/GetWeather';
 
+//
 // viewport height set
 setViewportHeightUnit();
 window.addEventListener('resize', setViewportHeightUnit);
 
+//
 // initial watch fade-in
 setTimeout(() => {
   fadeIn();
 }, 1000);
 
+//
 // clock
 setInterval(() => {
   const time = new Date();
@@ -26,6 +29,7 @@ setInterval(() => {
   updateClock(hours, minutes, seconds, weekday, month);
 }, 1000);
 
+//
 // rings
 randomActivityRings();
 
@@ -33,6 +37,7 @@ document
   .getElementById('bottom')
   .addEventListener('click', randomActivityRings);
 
+//
 // weather
 const searchField = document.getElementById('location');
 
@@ -67,10 +72,24 @@ async function handleWeather(local) {
   complications.temp.max.innerHTML = `${parseInt(weatherReport.max_temp)}º`;
 }
 
+handleWeather('lisbon');
+
 document
   .getElementById('btn')
   .addEventListener('click', () => handleWeather(searchField.value));
 
-// getWeather();
+//
+//
+//
+console.log(`
 
-console.log('made by Wolf');
+----------
+
+Hi fellow dev
+They Call Me Wolf
+
+@ https://github.com/bruno-wolf
+
+----------
+
+`);

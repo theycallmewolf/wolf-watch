@@ -1,6 +1,5 @@
-import { weekDays } from './utils/weekdays';
-//
-// handling date
+import { weekDays } from '../utils/weekdays';
+
 export const updateClock = (hours, minutes, seconds, weekday, month) => {
   const hourHand = document.getElementById('hour');
   const minuteHand = document.getElementById('minute');

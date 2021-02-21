@@ -1,4 +1,4 @@
-import { getRandomInt } from './utils/get-random-int';
+import { getRandomInt } from '../utils/get-random-int';
 
 export const randomActivityRings = () => {
   const moveRing = document.querySelector('.move-ring .completed');

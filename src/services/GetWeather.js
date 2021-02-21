@@ -1,4 +1,4 @@
-import { api } from './api';
+import { api } from '../infra/api';
 
 export const getWeather = async ({ woeid }) => {
   const response = await api.get(`weather/${woeid}`);
