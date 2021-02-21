@@ -3,6 +3,7 @@ import { setViewportHeightUnit } from './utils/viewport';
 import { updateClock } from './services/UpdateClock';
 import { randomActivityRings } from './services/LoadActivityRings';
 import { getWeather, getLocation } from './services/GetWeather';
+import { getLocationByID } from './services/GetLocationByID';
 
 //
 // viewport height set
@@ -50,9 +51,7 @@ async function handleWeather(local) {
   };
 
   const locationData = await getLocation({ local });
-  !locationData
-    ? (messagePlaceholder.innerHTML = 'Não encontrado.')
-    : console.log('CHILLI');
+  !locationData ? (messagePlaceholder.innerHTML = 'Não encontrado.') : null;
 
   const weatherReport = await getWeather({ woeid: locationData.woeid });
 
@@ -65,11 +64,16 @@ async function handleWeather(local) {
   complications.temp.max.innerHTML = `${parseInt(weatherReport.max_temp)}º`;
 }
 
-handleWeather('lisbon');
-
 document
   .getElementById('btn')
   .addEventListener('click', () => handleWeather(searchField.value));
+
+const handleClientLocation = async () => {
+  const location = await getLocationByID();
+  handleWeather(location.city);
+};
+
+handleClientLocation();
 
 //
 //
