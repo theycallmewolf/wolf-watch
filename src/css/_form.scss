@@ -11,9 +11,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-
+  
   &>div{
-   width: 80%; 
+    width: 80%; 
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    justify-content: center;
   }
 
   label {
