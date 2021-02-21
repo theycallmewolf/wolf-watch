@@ -1,5 +1,4 @@
 import './css/styles.scss';
-import { fadeIn } from './effects/fade-in';
 import { setViewportHeightUnit } from './utils/viewport';
 import { updateClock } from './services/UpdateClock';
 import { randomActivityRings } from './services/LoadActivityRings';
@@ -9,12 +8,6 @@ import { getWeather, getLocation } from './services/GetWeather';
 // viewport height set
 setViewportHeightUnit();
 window.addEventListener('resize', setViewportHeightUnit);
-
-//
-// initial watch fade-in
-setTimeout(() => {
-  fadeIn();
-}, 1000);
 
 //
 // clock
