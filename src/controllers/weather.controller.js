@@ -16,6 +16,7 @@ async function execute(local) {
 
   const weatherReport = await getWeather({ woeid: locationData.woeid });
 
+  document.getElementById('city').innerText = local;
   complications.rain.current.innerHTML = `${weatherReport.predictability}%`;
   complications.temp.current.innerHTML = `${parseInt(weatherReport.the_temp)}º`;
   complications.temp.min.innerHTML = `${parseInt(weatherReport.min_temp)}º`;
