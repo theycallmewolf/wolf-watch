@@ -4,6 +4,7 @@ import { updateClock } from './services/UpdateClock';
 import { randomActivityRings } from './services/LoadActivityRings';
 import { getWeather, getLocation } from './services/GetWeather';
 import { getLocationByID } from './services/GetLocationByID';
+import { showToast } from './services/UseToast';
 
 //
 // viewport height set
@@ -36,7 +37,6 @@ document
 const searchField = document.getElementById('location');
 
 async function handleWeather(local) {
-  const messagePlaceholder = document.getElementById('message-holder');
   const complications = {
     rain: {
       element: document.getElementById('top-left'),
@@ -51,7 +51,14 @@ async function handleWeather(local) {
   };
 
   const locationData = await getLocation({ local });
-  !locationData ? (messagePlaceholder.innerHTML = 'Não encontrado.') : null;
+  if (!locationData) {
+    showToast({
+      title: 'Oops!',
+      description: `We couldn't find "${local}". Try another one.`,
+    });
+
+    return;
+  }
 
   const weatherReport = await getWeather({ woeid: locationData.woeid });
 
