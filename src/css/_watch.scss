@@ -641,14 +641,20 @@
             font-size: 14px;
             display: block;
             position: absolute;
-            bottom: 110px;
-            right: 30px;
-            transform: rotate(116deg);
+            bottom: 112px;
+            right: 18px;
+            transform: rotate(110deg);
+            width: 30px;
+            height: 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
             &:last-of-type {
-              bottom: 22px;
-              right: 96px;
-              transform: rotate(150deg);
+              bottom: 18px;
+              right: 92px;
+              transform: rotate(155deg);
             }
           }
 
