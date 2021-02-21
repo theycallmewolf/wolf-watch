@@ -83,6 +83,10 @@ const handleClientLocation = async () => {
 handleClientLocation();
 
 //
+// input focus
+document.getElementById('location').focus();
+
+//
 //
 //
 console.log(`
