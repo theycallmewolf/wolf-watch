@@ -34,7 +34,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/template.html',
+      template: './src/index.html',
       title: 'Wolf Watch',
     }),
     new Dotenv(),
