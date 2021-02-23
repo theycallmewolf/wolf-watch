@@ -21,6 +21,9 @@ async function execute(local) {
   complications.temp.current.innerHTML = `${parseInt(weatherReport.the_temp)}º`;
   complications.temp.min.innerHTML = `${parseInt(weatherReport.min_temp)}º`;
   complications.temp.max.innerHTML = `${parseInt(weatherReport.max_temp)}º`;
+  complications.weatherState.icon.innerHTML = `<svg>
+    <use href="#${weatherReport.weather_state_abbr}" />
+  </svg>`;
 }
 
 export default execute;

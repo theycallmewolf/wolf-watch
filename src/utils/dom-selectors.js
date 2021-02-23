@@ -9,4 +9,8 @@ export const complications = {
     min: document.querySelectorAll('#top-right .value-xs')[0],
     max: document.querySelectorAll('#top-right .value-xs')[1],
   },
+  weatherState: {
+    element: document.getElementById('bottom-right'),
+    icon: document.querySelector('#bottom-right svg'),
+  },
 };

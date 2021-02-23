@@ -11,6 +11,8 @@ body {
   height: 100vh;
   font-family: 'Roboto', sans-serif;
   line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 header {
@@ -30,4 +32,8 @@ header {
   p {
     color: $c-medium-grey;
   }
+}
+
+.hide {
+  display: none;
 }

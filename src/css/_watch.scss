@@ -761,6 +761,22 @@
           }
           
         }
+
+        &#bottom-right {
+          width: 12%;
+          height: 12%;
+          position: absolute;
+          bottom: 14px;
+          left: 14px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          svg {
+            fill: $c-pastel-light;
+            transform: rotate(90deg);
+          }
+        }
       }
   
       #main-center {
