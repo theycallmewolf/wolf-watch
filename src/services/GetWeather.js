@@ -7,5 +7,5 @@ export const getWeather = async ({ woeid }) => {
 
 export const getLocation = async ({ local }) => {
   const response = await api.get(`location/${local}`);
-  return response.data[0];
+  return response.data;
 };

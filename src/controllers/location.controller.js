@@ -3,8 +3,9 @@ import handleWeather from './weather.controller';
 
 const execute = async () => {
   const location = await getLocationByID();
-  handleWeather(location.city);
+  const time = await handleWeather(location.city);
+
+  return time ? time : null;
 };
 
 export default execute;
-  
