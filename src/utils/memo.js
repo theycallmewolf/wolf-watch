@@ -1,4 +1,6 @@
-export const complications = {
+const weekDays = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+
+const complications = {
   rain: {
     element: document.getElementById('top-left'),
     current: document.querySelector('#top-left .value-xs'),
@@ -14,3 +16,5 @@ export const complications = {
     icon: document.querySelector('#bottom-right svg'),
   },
 };
+
+export { weekDays, complications };

@@ -1,17 +1,15 @@
-import { weekDays } from '../utils/weekdays';
-
-export const updateClock = (hours, minutes, seconds, weekday, month) => {
-  const hourHand = document.getElementById('hour');
-  const minuteHand = document.getElementById('minute');
-  const secondHand = document.getElementById('second');
-  const weekdayDisplay = document.getElementById('weekday');
-  const dayDisplay = document.getElementById('day');
-
+export const setClock = ({
+  hours,
+  minutes,
+  seconds,
+  weekDays,
+  dayOfTheMonth,
+}) => {
   let s = seconds;
   let m = minutes;
   let h = hours;
-  let w = weekDays[weekday];
-  let M = month;
+  let w = weekDays;
+  let M = dayOfTheMonth;
 
   s = s * 6;
   m = m * 6;
@@ -69,6 +67,11 @@ export const updateClock = (hours, minutes, seconds, weekday, month) => {
       break;
   }
 
+  const hourHand = document.getElementById('hour');
+  const minuteHand = document.getElementById('minute');
+  const secondHand = document.getElementById('second');
+  const weekdayDisplay = document.getElementById('weekday');
+  const dayDisplay = document.getElementById('day');
   hourHand.setAttribute(
     'style',
     `transform: translate(-50%, -50%) rotate(${h}deg)`,
