@@ -25,17 +25,25 @@ export const handleClock = () => {
 
   const getClientCity = async () => {
     currentCity = await getCityNameByIP();
-    const { location, time, weather } = await getApiData({ city: currentCity });
-    document.getElementById('city').innerText = location.title;
-    setTime({ time });
-    setClock({
-      hours: currentTime.hours,
-      minutes: currentTime.minutes,
-      seconds: currentTime.seconds,
-      weekDays: currentTime.weekday,
-      dayOfTheMonth: currentTime.dayOfTheMonth,
-    });
-    setWeather({ weather });
+    try {
+      const { location, time, weather } = await getApiData({
+        city: currentCity,
+      });
+
+      console.log({ location, time, weather });
+      document.getElementById('city').innerText = currentCity;
+      setTime({ time });
+      setClock({
+        hours: currentTime.hours,
+        minutes: currentTime.minutes,
+        seconds: currentTime.seconds,
+        weekDays: currentTime.weekday,
+        dayOfTheMonth: currentTime.dayOfTheMonth,
+      });
+      setWeather({ weather });
+    } catch (error) {
+      console.log(error);
+    }
   };
   getClientCity();
 

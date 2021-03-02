@@ -1,5 +1,3 @@
-import { setViewportHeightUnit } from '../utils/viewport';
-
 export const showToast = ({ title, description }) => {
   const toast = document.getElementById('toast');
   const titleEl = document.createElement('strong');
