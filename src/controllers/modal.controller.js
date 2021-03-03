@@ -6,4 +6,8 @@ const closeModal = () => {
   document.getElementById('modal').classList.remove('show');
 };
 
-export { openModal, closeModal };
+const handleModal = () => {
+  document.getElementById('button-top').addEventListener('click', openModal);
+};
+
+export { openModal, closeModal, handleModal };
