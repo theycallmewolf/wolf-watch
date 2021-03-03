@@ -1,21 +1,12 @@
-import { randomActivityRings } from './services/LoadActivityRings';
+import { handleActivityRings } from './controllers/rings.controller';
 import { handleClock } from './controllers/clock.controller';
 import { openModal } from './controllers/modal.controller';
 import { handleViewport } from './controllers/viewport.controller';
 import './css/styles.scss';
 
 handleViewport();
-
+handleActivityRings();
 handleClock();
-
-randomActivityRings();
-
-document
-  .getElementById('bottom')
-  .addEventListener('click', randomActivityRings);
-
-// initial input focus
-document.getElementById('location').focus();
 
 document.getElementById('button-top').addEventListener('click', openModal);
 
