@@ -16,3 +16,22 @@
       stroke-dasharray: 0 100;
   }
 }
+
+@keyframes buttonIndicator {
+  0%,
+  40%,
+  60%,
+  80%,
+  100% {
+    background: rgba(255, 160, 122, 0);
+    box-shadow: 0 0 6px 2px rgba(255, 160, 122, 0);
+    transform: scale(.4) translate(-120%, -20%);
+  }
+  
+  50%,
+  90% {
+    background: rgba(255, 160, 122, .6);
+    box-shadow: 0 0 6px 2px rgba(255, 160, 122, .6);
+    transform: scale(.4) translate(-120%, -20%);
+  }
+}
