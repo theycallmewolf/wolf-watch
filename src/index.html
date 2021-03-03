@@ -140,11 +140,14 @@
 
           <!-- outside complications -->
           <div class="complication buttons">
-            <button></button>
-            <button></button>
-            <button></button>
-            <button></button>
+            <button id="button-top-left"></button>
+            <button id="button-top-right"></button>
+            <button id="button-bottom-left"></button>
+            <button id="button-bottom-right"></button>
+            <button id="button-top"></button>
+            <button id="button-bottom"></button>
           </div>
+
           <div id="top-left" class="complication outside">
             <svg class="graph" viewBox="0 0 35 35">
               <g class="ring">
@@ -267,16 +270,25 @@
           <!-- center -->
           <div id="main-center"></div>
 
+          <div class="modal">
+            <div class="search">
+              <div>
+                <label for="location">city</label>
+                <input type="text" name="location" id="location">
+              </div>
+              <button id="btn">go</button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-    <section id="form" class="form">
+    <!-- <section id="form" class="form">
       <div>
         <label for="location">Enter a city</label>
         <input type="text" name="location" id="location">
       </div>
       <button id="btn">get</button>
-    </section>
+    </section> -->
     <section id="credits">
       <a class="github" href="https://github.com/bruno-wolf/play-wolf-watch" target="_blank" rel="noreferrer noopener">
         <svg width="231.49" height="221.85" viewBox="0 0 231.49 221.85">
