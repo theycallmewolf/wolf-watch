@@ -5,7 +5,7 @@ import { getApiData } from '../services/getApiData';
 import { weekDays } from '../utils/memo';
 import { closeModal } from '../controllers/modal.controller';
 
-export const handleClock = () => {
+export const handleClock = async () => {
   let currentCity;
   let currentTime = {
     hours: null,
@@ -24,15 +24,13 @@ export const handleClock = () => {
     currentTime.dayOfTheMonth = date.getDate();
   };
 
-  const getClientCity = async () => {
-    currentCity = await getCityNameByIP();
+  const updateClock = async () => {
     try {
       const { location, time, weather } = await getApiData({
         city: currentCity,
       });
 
-      console.log({ location, time, weather });
-      document.getElementById('city').innerText = currentCity;
+      document.getElementById('city').innerText = location.title || currentCity;
       setTime({ time });
       setClock({
         hours: currentTime.hours,
@@ -42,28 +40,18 @@ export const handleClock = () => {
         dayOfTheMonth: currentTime.dayOfTheMonth,
       });
       setWeather({ weather });
+      closeModal();
     } catch (error) {
       console.log(error);
     }
   };
-  getClientCity();
 
-  document.getElementById('btn').addEventListener('click', async () => {
+  currentCity = await getCityNameByIP();
+  updateClock();
+
+  document.getElementById('btn').addEventListener('click', () => {
     currentCity = document.getElementById('location').value;
-    const { location, time, weather } = await getApiData({
-      city: currentCity,
-    });
-    document.getElementById('city').innerText = location.title;
-    setTime({ time });
-    setClock({
-      hours: currentTime.hours,
-      minutes: currentTime.minutes,
-      seconds: currentTime.seconds,
-      weekDays: currentTime.weekday,
-      dayOfTheMonth: currentTime.dayOfTheMonth,
-    });
-    setWeather({ weather });
-    closeModal();
+    updateClock();
   });
 
   const refreshClock = () => {
@@ -94,5 +82,6 @@ export const handleClock = () => {
       });
     }, 1000);
   };
+  
   refreshClock();
 };
