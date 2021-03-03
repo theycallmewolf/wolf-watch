@@ -1,11 +1,10 @@
-import { setViewportHeightUnit } from './utils/viewport';
 import { randomActivityRings } from './services/LoadActivityRings';
 import { handleClock } from './controllers/clock.controller';
 import { openModal } from './controllers/modal.controller';
+import { handleViewport } from './controllers/viewport.controller';
 import './css/styles.scss';
 
-setViewportHeightUnit();
-window.addEventListener('resize', setViewportHeightUnit);
+handleViewport();
 
 handleClock();
 
