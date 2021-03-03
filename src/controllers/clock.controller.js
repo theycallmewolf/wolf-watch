@@ -3,6 +3,7 @@ import { setWeather } from '../services/setWeather';
 import { getCityNameByIP } from '../services/getCityNameByIP';
 import { getApiData } from '../services/getApiData';
 import { weekDays } from '../utils/memo';
+import { closeModal } from '../controllers/modal.controller';
 
 export const handleClock = () => {
   let currentCity;
@@ -62,6 +63,7 @@ export const handleClock = () => {
       dayOfTheMonth: currentTime.dayOfTheMonth,
     });
     setWeather({ weather });
+    closeModal();
   });
 
   const refreshClock = () => {
