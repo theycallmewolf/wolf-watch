@@ -4,6 +4,7 @@ const openModal = () => {
 
 const closeModal = () => {
   document.getElementById('modal').classList.remove('show');
+  document.getElementById('location').value = '';
 };
 
 const handleModal = () => {

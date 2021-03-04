@@ -58,7 +58,7 @@ const updateClock = async () => {
       city: currentCity,
     });
 
-    document.getElementById('city').innerText = location.title || currentCity;
+    document.getElementById('city').innerText = location.title;
     setTime({ time });
     setClock({
       hours: currentTime.hours,
