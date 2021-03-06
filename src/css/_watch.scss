@@ -904,7 +904,7 @@
           border-radius: 8px;
         }
 
-        .search {
+        .area {
           background: $c-ultra-grey;
           display: flex;
           align-items: flex-end ;
@@ -964,7 +964,20 @@
             }
           }
         }
-      
+        
+        #close-button {
+          position: absolute;
+          top: 16px;
+          left: 16px;
+          color: $c-pastel-light;
+          background: transparent;
+          border: none;
+
+          &:focus {
+            outline: none;
+            border-bottom: 1px solid $c-pastel-light;
+          }
+        }
       }
     }
 
