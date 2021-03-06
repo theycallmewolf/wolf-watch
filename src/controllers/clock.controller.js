@@ -4,6 +4,7 @@ import { getCityNameByIP } from '../services/getCityNameByIP';
 import { getApiData } from '../services/getApiData';
 import { weekDays } from '../utils/memo';
 import { closeModal } from '../controllers/modal.controller';
+import { showToast } from '../services/UseToast';
 
 let currentCity;
 let currentTime = {
@@ -91,8 +92,17 @@ export const handleClock = async () => {
   updateClock();
 
   document.getElementById('btn').addEventListener('click', () => {
-    currentCity = document.getElementById('location').value;
-    updateClock();
+    let inputValue = document.getElementById('location').value;
+
+    if (inputValue) {
+      currentCity = inputValue;
+      updateClock();
+    } else {
+      showToast({
+        title: `We can't explore the unknown!`,
+        description: 'Please add a city before clicking on the button',
+      });
+    }
   });
 
   refreshClock();
