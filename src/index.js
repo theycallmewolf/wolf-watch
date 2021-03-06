@@ -1,18 +1,20 @@
-import { executeActivityRings } from './controllers/rings.controller';
 import Clock from './classes/Clock';
 import Modal from './classes/Modal';
+import Rings from './classes/Rings';
+
 import { executeViewport } from './controllers/viewport.controller';
 import { executeTimer } from './controllers/timer.controller';
 import './css/styles.scss';
 
 const clock = new Clock();
 const modal = new Modal();
+const rings = new Rings();
 
 clock.execute();
 modal.execute();
+rings.execute();
 
 executeViewport();
-executeActivityRings();
 executeTimer();
 
 // greetings
