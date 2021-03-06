@@ -190,7 +190,7 @@
               <path
                 d="M52.42,24.93A26.22,26.22,0,0,0,28.94.14,24.6,24.6,0,0,0,26.23,0h0a2.71,2.71,0,0,0-2.68,2.75V13.56a2.54,2.54,0,0,0,.21,1.06,2.71,2.71,0,0,0,2.83,1.64,2.8,2.8,0,0,0,2.38-2.82V5.61A20.8,20.8,0,1,1,16.14,8,2.7,2.7,0,0,0,17.3,4.66h0a2.7,2.7,0,0,0-1.61-1.53,2.78,2.78,0,0,0-2.22.19,26.23,26.23,0,1,0,39,21.62Zm-35.9-8.38a.9.9,0,0,0-.2,1c1.09,2.87,4.66,9.66,7.33,12.55a4.67,4.67,0,0,0,6.39.56A4.52,4.52,0,0,0,30.33,24c-2.79-2.79-9.88-6.49-12.85-7.62A.9.9,0,0,0,16.52,16.55Z" />
             </svg>
-            <span class="value-xs">25:00</span>
+            <span class="value-xs" id="complication-timer">25:00</span>
           </div>
 
           <div id="bottom-right" class="complication outside">
@@ -281,9 +281,9 @@
             </div>
             <div id="timer" class="area hide">
               <span class="timer">
-                <button id="add-minutes">-</button>
-                <span>25</span>:<span>00</span>
-                <button id="remove-minutes">+</button>
+                <button id="remove-minutes">-</button>
+                <span id="timer-minutes">25</span>:<span id="timer-seconds">00</span>
+                <button id="add-minutes">+</button>
               </span>
               <button id="timer-start">go</button>
             </div>
