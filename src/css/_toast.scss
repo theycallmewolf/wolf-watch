@@ -8,9 +8,9 @@
   padding: 16px;
   border-radius: 8px;
   font-size: 14px;
-  color: $c-pastel-light;
-  background: $c-grey;
-  box-shadow: 0 24px 15px -20px $c-grey;
+  color: $c-grey;
+  background: $c-white;
+  box-shadow: 0 24px 15px -20px $c-light-grey;
   transition: top 300ms ease-in-out;
   
   display: flex;
@@ -19,6 +19,7 @@
   justify-content: center;
   
   &>strong {
+    color: $c-medium-grey;
     font-size: 18px;
     margin-bottom: 4px;
     letter-spacing: .5px;
@@ -34,7 +35,6 @@
     transform: unset;
     top: 21px;
     right: -400px;
-    box-shadow: 0 0 15px 0 $c-grey;
 
     &.show {
       right: 21px;
