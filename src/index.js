@@ -1,20 +1,21 @@
 import Clock from './classes/Clock';
 import Modal from './classes/Modal';
 import Rings from './classes/Rings';
+import Window from './classes/Window';
 
-import { executeViewport } from './controllers/viewport.controller';
 import { executeTimer } from './controllers/timer.controller';
 import './css/styles.scss';
 
+const window = new Window();
 const clock = new Clock();
 const modal = new Modal();
 const rings = new Rings();
 
+window.execute();
 clock.execute();
 modal.execute();
 rings.execute();
 
-executeViewport();
 executeTimer();
 
 // greetings
