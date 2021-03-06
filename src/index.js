@@ -1,13 +1,16 @@
 import { executeActivityRings } from './controllers/rings.controller';
-import { executeClock } from './controllers/clock.controller';
+import Clock from './classes/Clock';
 import { executeViewport } from './controllers/viewport.controller';
 import { executeModal } from './controllers/modal.controller';
 import { executeTimer } from './controllers/timer.controller';
 import './css/styles.scss';
 
+const clock = new Clock();
+
+clock.execute();
+
 executeViewport();
 executeActivityRings();
-executeClock();
 executeModal();
 executeTimer();
 

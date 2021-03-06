@@ -33,5 +33,5 @@ export const executeTimer = () => {
   console.log({ timerMinutes });
   elements.buttons.addMinutes.addEventListener('click', increaseMinutes);
   elements.buttons.removeMinutes.addEventListener('click', decreaseMinutes);
-  elements.buttons.start.addEventListener('click', startTimer);
+  // elements.buttons.start.addEventListener('click', startTimer);
 };
