@@ -23,7 +23,7 @@ const closeModal = () => {
   });
 };
 
-const handleModal = () => {
+const executeModal = () => {
   document.getElementById('button-top').addEventListener('click', () => {
     openModal({ content: 'search' });
   });
@@ -37,4 +37,4 @@ const handleModal = () => {
   document.getElementById('close-button').addEventListener('click', closeModal);
 };
 
-export { openModal, closeModal, handleModal };
+export { openModal, closeModal, executeModal };

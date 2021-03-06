@@ -87,7 +87,7 @@ const updateClockOnWindowFocus = () => {
   window.onblur = () => (hasFocus = false);
 };
 
-export const handleClock = async () => {
+export const executeClock = async () => {
   currentCity = await getCityNameByIP();
   updateClock();
 

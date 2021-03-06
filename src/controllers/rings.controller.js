@@ -1,6 +1,6 @@
 import { randomActivityRings } from '../services/LoadActivityRings';
 
-export const handleActivityRings = () => {
+export const executeActivityRings = () => {
   randomActivityRings();
 
   document

@@ -7,7 +7,7 @@ const setViewportHeightUnit = () => {
   );
 };
 
-export const handleViewport = () => {
+export const executeViewport = () => {
   setViewportHeightUnit();
   window.addEventListener('resize', setViewportHeightUnit);
 };
