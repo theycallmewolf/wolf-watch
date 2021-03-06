@@ -28,6 +28,7 @@
     display: flex;
     align-items: flex-end ;
     justify-content: space-between;
+    width: 100%;
 
     &>div {
       flex: 1;
@@ -63,8 +64,8 @@
     button {
       width: 40px;
       height: 40px;
-      background: $c-black;
-      border: 2px solid $c-black;
+      background: $c-medium-grey;
+      border: 2px solid $c-medium-grey;
       padding: 4px;
       margin-left: 16px;
       border-radius: 8px;
@@ -82,7 +83,39 @@
         border-color: $c-grey;
       }
     }
+
+    .timer {
+      color: $c-white;
+      display: flex;
+      flex: 1;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 21px;
+
+      & > button {
+        margin: 0;
+        background: $c-ultra-grey;
+        border-color: $c-ultra-grey;
+        font-size: 21px;
+        line-height: 0;
+
+        &:hover,
+        &:focus {
+          background: $c-dark-grey;
+          border-color: $c-dark-grey;
+        }
+      }
+
+      & > span:first-of-type {
+        padding-left: 8px;
+      }
+
+      & > span:last-of-type {
+        padding-right: 8px;
+      }
+    }
   }
+
   
   #close-button {
     position: absolute;
