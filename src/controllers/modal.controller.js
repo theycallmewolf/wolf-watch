@@ -1,4 +1,16 @@
-const openModal = () => {
+const openModal = ({ content }) => {
+  switch (content) {
+    case 'search':
+      document.getElementById('search').classList.remove('hide');
+      break;
+
+    case 'timer':
+      document.getElementById('timer').classList.remove('hide');
+      break;
+
+    default:
+      break;
+  }
   document.getElementById('modal').classList.add('show');
 };
 
