@@ -99,8 +99,8 @@ export const handleClock = async () => {
       updateClock();
     } else {
       showToast({
-        title: `We can't explore the unknown!`,
-        description: 'Please add a city before clicking on the button',
+        title: `Exploring the unknown?`,
+        description: 'Please add a city before clicking the button',
       });
     }
   });
