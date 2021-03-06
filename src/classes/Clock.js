@@ -2,8 +2,8 @@ import { setWeather } from '../services/setWeather';
 import { getCityNameByIP } from '../services/getCityNameByIP';
 import { getApiData } from '../services/getApiData';
 import { weekDays } from '../utils/memo';
-import { closeModal } from '../controllers/modal.controller';
 import Toast from './Toast';
+import Modal from './Modal';
 
 export default class Clock {
   constructor() {
@@ -38,6 +38,7 @@ export default class Clock {
       },
     };
     this.toast = new Toast();
+    this.modal = new Modal();
   }
 
   refresh() {
@@ -164,7 +165,7 @@ export default class Clock {
     this.setCurrentTime({ time });
     this.setClock();
     setWeather({ weather });
-    closeModal();
+    this.modal.close();
   }
 
   updateClockOnWindowFocus() {
