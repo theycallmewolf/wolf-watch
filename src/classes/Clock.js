@@ -3,7 +3,7 @@ import { getCityNameByIP } from '../services/getCityNameByIP';
 import { getApiData } from '../services/getApiData';
 import { weekDays } from '../utils/memo';
 import { closeModal } from '../controllers/modal.controller';
-import { showToast } from '../services/UseToast';
+import Toast from './Toast';
 
 export default class Clock {
   constructor() {
@@ -37,6 +37,7 @@ export default class Clock {
         citySearch: document.getElementById('search-button'),
       },
     };
+    this.toast = new Toast();
   }
 
   refresh() {
@@ -188,7 +189,7 @@ export default class Clock {
         this.currentCity = inputValue;
         this.updateClock();
       } else {
-        showToast({
+        this.toast.add({
           title: `Exploring the unknown?`,
           description: 'Please add a city before clicking the button',
         });

@@ -1,5 +1,7 @@
 import { api } from '../infra/api';
-import { showToast } from './UseToast';
+import Toast from '../classes/Toast';
+
+const toast = new Toast();
 
 export const getApiData = async ({ city }) => {
   try {
@@ -8,10 +10,11 @@ export const getApiData = async ({ city }) => {
   } catch (error) {
     console.log(error);
 
-    showToast({
+    toast.add({
       title: `Hot or cold in ${city}?`,
       description: `No clue. We couldn't get the weather report.`,
     });
+
     const now = new Date();
     const year = now.getFullYear();
     const month = String(now.getMonth() + 1).padStart(2, '0');
