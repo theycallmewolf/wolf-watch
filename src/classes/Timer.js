@@ -56,10 +56,11 @@ export default class Timer {
   start() {
     this.interval = setInterval(() => {
       if (this.timerInSeconds > 0) {
-        this.elements.buttons.increase.innerText = ' ';
-        this.elements.buttons.decrease.innerText = ' ';
         this.timerInSeconds--;
         this.renderTimeOnDisplay();
+        this.elements.buttons.increase.disabled = true;
+        this.elements.buttons.decrease.disabled = true;
+        this.elements.buttons.reset.disabled = true;
         this.isActive = true;
         this.renderButton();
       }
@@ -67,8 +68,9 @@ export default class Timer {
   }
 
   stop() {
-    this.elements.buttons.increase.innerHTML = `<svg><use href="#i-add" /></svg>`;
-    this.elements.buttons.decrease.innerHTML = `<svg><use href="#i-remove" /></svg>`;
+    this.elements.buttons.increase.disabled = false;
+    this.elements.buttons.decrease.disabled = false;
+    this.elements.buttons.reset.disabled = false;
     clearInterval(this.interval);
     this.isActive = false;
     this.renderButton();

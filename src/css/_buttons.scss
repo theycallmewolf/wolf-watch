@@ -7,16 +7,37 @@ button {
     color: $c-pastel-light;
     background: transparent;
     border: none;
-  
-    &:focus {
-      outline: none;
-      border-bottom: 1px solid $c-pastel-light;
-    }
 
     svg {
       fill: $c-pastel-light;
       width: 14px;
       height: 14px;
+    }
+    
+    &:hover,
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid $c-pastel-light;
+    }
+
+    &:disabled,
+    &[disabled] {
+      color: $c-grey;
+
+      svg {
+        fill: $c-grey;
+      }
+    }  
+    
+    &.icon {
+      &:hover,
+      &:focus {
+        border: none;
+        
+        svg {
+          fill: $c-white;
+        }
+      }
     }
   }
 
