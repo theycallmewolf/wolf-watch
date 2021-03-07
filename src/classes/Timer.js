@@ -6,27 +6,39 @@ export default class Timer {
         decrease: document.getElementById('remove-minutes'),
         start: document.getElementById('timer-start'),
       },
-      timer: document.getElementById('timer-minutes'),
+      timer: {
+        minutes: document.getElementById('timer-minutes'),
+        seconds: document.getElementById('timer-seconds'),
+      },
       complication: document.getElementById('complication-timer'),
     };
 
-    this.timerMinutes = 25;
+    this.timerInSeconds = 25 * 60;
+  }
+
+  renderTimeOnDisplay() {
+    const minutes = this.timerInSeconds / 60;
+    let seconds = this.timerInSeconds % 60;
+    seconds = String(seconds).padStart(2, '0');
+    this.elements.timer.minutes.innerText = minutes;
+    this.elements.timer.seconds.innerText = seconds;
+    this.elements.complication.innerText = `${minutes}: ${seconds}`;
   }
 
   increase() {
-    if (this.timerMinutes >= 60) {
+    if (this.timerInSeconds >= 60 * 60) {
       return;
     }
-    this.timerMinutes += 5;
-    this.elements.timer.innerText = this.timerMinutes;
+    this.timerInSeconds += 5 * 60;
+    this.renderTimeOnDisplay();
   }
 
   decrease() {
-    if (this.timerMinutes <= 0) {
+    if (this.timerInSeconds <= 0) {
       return;
     }
-    this.timerMinutes -= 5;
-    this.elements.timer.innerText = this.timerMinutes;
+    this.timerInSeconds -= 5 * 60;
+    this.renderTimeOnDisplay();
   }
 
   start() {}
@@ -36,7 +48,9 @@ export default class Timer {
   reset() {}
 
   execute() {
+    this.renderTimeOnDisplay();
     this.elements.buttons.increase.onclick = () => this.increase();
     this.elements.buttons.decrease.onclick = () => this.decrease();
+    this.elements.buttons.start.onclick = () => this.start();
   }
 }
