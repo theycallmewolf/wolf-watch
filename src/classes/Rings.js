@@ -6,6 +6,7 @@ export default class Rings {
         exercise: document.querySelector('.exercise-ring .completed'),
         stand: document.querySelector('.stand-ring .completed'),
       },
+      button: document.getElementById('button-bottom'),
     };
   }
 
@@ -13,7 +14,7 @@ export default class Rings {
     return Math.floor(Math.random() * Math.floor(max));
   }
 
-  execute() {
+  set() {
     const one = this.getRandomInt({ max: 80 });
     const two = this.getRandomInt({ max: one });
     const three = this.getRandomInt({ max: 90 });
@@ -24,5 +25,10 @@ export default class Rings {
       `${two}, 100`,
     );
     this.elements.rings.stand.setAttribute('stroke-dasharray', `${three}, 100`);
+  }
+  
+  execute() {
+    this.set();
+    this.elements.button.addEventListener('click', () => this.set());
   }
 }
