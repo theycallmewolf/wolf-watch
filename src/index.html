@@ -56,6 +56,19 @@
     </symbol>
   </svg>
 
+  <svg class="hide">
+    <symbol id="i-add" viewBox="0 0 100 100">
+      <path
+        d="M95.41 45.41a4.59 4.59 0 0 1 0 9.18H54.59v40.82a4.59 4.59 0 0 1-1.35 3.25 4.59 4.59 0 0 1-7.83-3.25V54.59H4.59a4.59 4.59 0 0 1 0-9.18h40.82V4.59a4.59 4.59 0 0 1 9.18 0v40.82z" />
+      <path fill="none" d="M0 0h100v100H0z" />
+    </symbol>
+    <symbol id="i-remove" viewBox="0 0 100 100">
+      <path d="M4.59 54.59a4.59 4.59 0 0 1 0-9.18h90.82a4.59 4.59 0 0 1 0 9.18z" />
+      <path fill="none" d="M0 0h100v100H0z" />
+    </symbol>
+  </svg>
+
+
   <main>
     <section id="watch">
       <div class="container">
@@ -271,21 +284,36 @@
           <div id="main-center"></div>
 
           <div class="modal" id="modal">
-            <button id="close-button">close</button>
+            <button id="close-button" class="btn-link">close</button>
             <div id="search" class="area hide">
               <div>
                 <label for="location">city</label>
                 <input type="text" name="location" id="location">
               </div>
-              <button id="search-button">go</button>
+              <button id="search-button" class="btn-fill">go</button>
             </div>
             <div id="timer" class="area hide">
-              <span class="timer">
-                <button id="remove-minutes">-</button>
-                <span id="timer-minutes">25</span>:<span id="timer-seconds">00</span>
-                <button id="add-minutes">+</button>
+              <span class="timer-container">
+                <span>
+                  <button id="remove-minutes" class="btn-link">
+                    <svg>
+                      <use href="#i-remove" />
+                    </svg>
+                  </button>
+                  <span id="timer-minutes">25</span>
+                  <span id="timer-colon">:</span>
+                  <span id="timer-seconds">00</span>
+                  <button id="add-minutes" class="btn-link">
+                    <svg>
+                      <use href="#i-add" />
+                    </svg>
+                  </button>
+                </span>
+                <span>
+                  <button id="timer-reset" class="btn-link">reset</button>
+                  <button id="timer-start" class="btn-fill">start</button>
+                </span>
               </span>
-              <button id="timer-start">go</button>
             </div>
           </div>
         </div>

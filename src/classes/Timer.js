@@ -9,6 +9,7 @@ export default class Timer {
       timer: {
         minutes: document.getElementById('timer-minutes'),
         seconds: document.getElementById('timer-seconds'),
+        colon: document.getElementById('timer-colon'),
       },
       complication: document.getElementById('complication-timer'),
     };
@@ -65,8 +66,8 @@ export default class Timer {
   }
 
   stop() {
-    this.elements.buttons.increase.innerText = '+';
-    this.elements.buttons.decrease.innerText = '-';
+    this.elements.buttons.increase.innerHTML = `<svg><use href="#i-add" /></svg>`;
+    this.elements.buttons.decrease.innerHTML = `<svg><use href="#i-remove" /></svg>`;
     clearInterval(this.interval);
     this.isActive = false;
     this.renderButton();
