@@ -5,6 +5,7 @@ export default class Timer {
         increase: document.getElementById('add-minutes'),
         decrease: document.getElementById('remove-minutes'),
         toggleStart: document.getElementById('timer-start'),
+        reset: document.getElementById('timer-reset'),
       },
       timer: {
         minutes: document.getElementById('timer-minutes'),
@@ -73,13 +74,17 @@ export default class Timer {
     this.renderButton();
   }
 
-  reset() {}
+  reset() {
+    this.timerInSeconds = 25 * 60;
+    this.renderTimeOnDisplay();
+  }
 
   execute() {
     this.renderTimeOnDisplay();
     this.renderButton();
     this.elements.buttons.increase.onclick = () => this.increase();
     this.elements.buttons.decrease.onclick = () => this.decrease();
+    this.elements.buttons.reset.onclick = () => this.reset();
     this.elements.buttons.toggleStart.onclick = () => {
       !this.isActive ? this.start() : this.stop();
     };
