@@ -18,7 +18,7 @@
     left: 5%;
   }
 
-  &>div {
+  & > div {
     padding: 24px 16px;
     border-radius: 8px;
   }
@@ -26,108 +26,47 @@
   .area {
     background: $c-ultra-grey;
     display: flex;
-    align-items: flex-end ;
+    align-items: center;
     justify-content: space-between;
     width: 100%;
 
-    &>div {
+    & > div {
       flex: 1;
     }
 
-    label {
-      font-size: 14px;
-      color: $c-pastel-light;
-      letter-spacing: .5px;
-      margin-bottom: 4px;
-    }
-  
-    input {
-      width: 100%;
-      padding: 8px;
-      margin: 8px 0 0;
-      box-sizing: border-box;
-      font-size: 18px;
-      letter-spacing: 1px;
-      color: $c-pastel-light;
-      background: transparent;
-      border-radius: 0;
-      border: none;
-      border-bottom: 2px solid $c-dark-grey;
-      transition: border 200ms ease-in-out;
-  
-      &:focus{
-        outline: none;
-        border-bottom-color: $c-grey;
-      }
-    }
-
-    button {
-      width: 40px;
-      height: 40px;
-      background: $c-medium-grey;
-      border: 2px solid $c-medium-grey;
-      padding: 4px;
-      margin-left: 16px;
-      border-radius: 8px;
-      font-size: 12px;
-      line-height: 1;
-      color: $c-white;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      cursor: pointer;
-      transition: border 200ms ease-in-out;
-  
-      &:hover,
-      &:focus{
-        outline: none;
-        border-color: $c-grey;
-      }
-    }
-
-    .timer {
+    .timer-container {
       color: $c-white;
       display: flex;
       flex: 1;
+      flex-flow: column;
       align-items: center;
       justify-content: space-between;
       font-size: 21px;
+      
+      & > span:first-of-type {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 8px;
+        font-weight: 600;
 
-      & > button {
-        margin: 0;
-        background: $c-ultra-grey;
-        border-color: $c-ultra-grey;
-        font-size: 21px;
-        line-height: 0;
+        & > button {
+          font-size: 20px;
+        }
+        
+        & > span {
+          font-size: 60px;
 
-        &:hover,
-        &:focus {
-          background: $c-dark-grey;
-          border-color: $c-dark-grey;
+          &:first-of-type {
+            padding-left: 8px;
+          }
+    
+          &:last-of-type {
+            padding-right: 8px;
+          }
         }
       }
-
-      & > span:first-of-type {
-        padding-left: 8px;
-      }
-
-      & > span:last-of-type {
-        padding-right: 8px;
-      }
-    }
-  }
-
-  
-  #close-button {
-    position: absolute;
-    top: 16px;
-    left: 16px;
-    color: $c-pastel-light;
-    background: transparent;
-    border: none;
-
-    &:focus {
-      outline: none;
-      border-bottom: 1px solid $c-pastel-light;
     }
   }
 }

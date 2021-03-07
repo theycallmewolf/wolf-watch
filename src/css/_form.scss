@@ -1,70 +1,26 @@
-.form {
-  position: fixed;
-  bottom: 21px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90%;
-  max-width: 360px;
-  padding: 16px;
-  // background: $c-pastel;
+label {
+  font-size: 14px;
+  color: $c-pastel-light;
+  letter-spacing: .5px;
+  margin-bottom: 4px;
+}
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  
-  &>div{
-    width: 80%; 
-    display: flex;
-    flex-flow: column;
-    align-items: flex-start;
-    justify-content: center;
-  }
+input {
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0 0;
+  box-sizing: border-box;
+  font-size: 18px;
+  letter-spacing: 1px;
+  color: $c-pastel-light;
+  background: transparent;
+  border-radius: 0;
+  border: none;
+  border-bottom: 2px solid $c-dark-grey;
+  transition: border 200ms ease-in-out;
 
-  label {
-    font-size: 16px;
-    color: $c-medium-grey;
-    letter-spacing: 1px;
-    margin-bottom: 4px;
-  }
-
-  input {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    border: none;
-    box-sizing: border-box;
-    font-size: 18px;
-    background: transparent;
-    border-bottom: 2px solid $c-pastel-light;
-    transition: border 200ms ease-in-out;
-
-    &:focus{
-      outline: none;
-      border-bottom-color: $c-grey;
-    }
-  }
-  
-  button {
-    width: 60px;
-    height: 60px;
-    background: $c-black;
-    color: $c-white;
-    line-height: 1;
-    border: 2px solid $c-black;
-    margin-left: 16px;
-    border-radius: 8px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: background 200ms ease-in-out;
-
-    &:hover {
-      background: $c-dark-grey;
-    }
-
-    &:focus{
-      outline: none;
-      border-color: $c-grey;
-    }
+  &:focus{
+    outline: none;
+    border-bottom-color: $c-grey;
   }
 }

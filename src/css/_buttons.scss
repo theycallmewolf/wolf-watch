@@ -1,0 +1,49 @@
+button {
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+
+  &.btn-link {
+    color: $c-pastel-light;
+    background: transparent;
+    border: none;
+  
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid $c-pastel-light;
+    }
+
+    svg {
+      fill: $c-pastel-light;
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  &.btn-fill {
+    background: $c-medium-grey;
+    border: 2px solid $c-medium-grey;
+    padding: 8px;
+    margin-left: 16px;
+    border-radius: 8px;
+    font-size: 12px;
+    line-height: 1;
+    color: $c-white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: border 200ms ease-in-out;
+
+    &:hover,
+    &:focus{
+      outline: none;
+      border-color: $c-grey;
+    }
+  }
+}
+
+#close-button {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+}
