@@ -6,6 +6,7 @@ export default class Timer {
         decrease: document.getElementById('remove-minutes'),
         start: document.getElementById('timer-start'),
       },
+      timer: document.getElementById('timer-minutes'),
       complication: document.getElementById('complication-timer'),
     };
 
@@ -17,7 +18,7 @@ export default class Timer {
       return;
     }
     this.timerMinutes += 5;
-    document.getElementById('timer-minutes').innerText = this.timerMinutes;
+    this.elements.timer.innerText = this.timerMinutes;
   }
 
   decrease() {
@@ -25,7 +26,7 @@ export default class Timer {
       return;
     }
     this.timerMinutes -= 5;
-    document.getElementById('timer-minutes').innerText = this.timerMinutes;
+    this.elements.timer.innerText = this.timerMinutes;
   }
 
   start() {}
