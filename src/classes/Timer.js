@@ -37,18 +37,18 @@ export default class Timer {
   }
 
   increase() {
-    if (this.timerInSeconds >= 60 * 60) {
-      return;
-    }
     this.timerInSeconds += 5 * 60;
+    if (this.timerInSeconds >= 60 * 60) {
+      this.timerInSeconds = 60 * 60;
+    }
     this.renderTimeOnDisplay();
   }
 
   decrease() {
-    if (this.timerInSeconds <= 0) {
-      return;
-    }
     this.timerInSeconds -= 5 * 60;
+    if (this.timerInSeconds <= 0) {
+      this.timerInSeconds = 0;
+    }
     this.renderTimeOnDisplay();
   }
 
