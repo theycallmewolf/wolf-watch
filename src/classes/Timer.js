@@ -12,10 +12,14 @@ export default class Timer {
         seconds: document.getElementById('timer-seconds'),
         colon: document.getElementById('timer-colon'),
       },
-      complication: document.getElementById('complication-timer'),
+      complication: {
+        timer: document.getElementById('complication-timer'),
+        graph: document.querySelector('#bottom-left .completed'),
+      },
     };
 
     this.timerInSeconds = 25 * 60;
+    this.timerStartValueInSeconds = 0;
     this.isActive = false;
     this.isAnimating = false;
     this.interval = null;
@@ -37,13 +41,21 @@ export default class Timer {
     );
     this.elements.timer.minutes.innerText = minutes;
     this.elements.timer.seconds.innerText = seconds;
-    this.elements.complication.innerText = `${minutes}: ${seconds}`;
+    this.elements.complication.timer.innerText = `${minutes}:${seconds}`;
   }
 
   renderButton() {
     this.elements.buttons.toggleStart.innerText = this.isActive
       ? 'stop'
       : 'start';
+  }
+
+  renderGraph() {
+    const value = (6.5 * this.timerInSeconds) / this.timerStartValueInSeconds;
+    this.elements.complication.graph.setAttribute(
+      'stroke-dasharray',
+      `${value}, 100`,
+    );
   }
 
   increase() {
@@ -63,6 +75,7 @@ export default class Timer {
   }
 
   start() {
+    this.timerStartValueInSeconds = this.timerInSeconds;
     this.interval = setInterval(() => {
       if (this.timerInSeconds > 0) {
         this.timerInSeconds--;
@@ -72,6 +85,9 @@ export default class Timer {
         this.elements.buttons.reset.disabled = true;
         this.isActive = true;
         this.renderButton();
+        this.pulseAnimation({
+          element: this.elements.complication.timer,
+        });
         this.pulseAnimation({
           element: this.elements.timer.colon,
         });
@@ -83,6 +99,7 @@ export default class Timer {
             element: this.elements.timer.minutes,
           });
         }
+        this.renderGraph();
       }
     }, 1000);
   }
