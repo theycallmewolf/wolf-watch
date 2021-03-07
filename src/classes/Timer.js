@@ -17,7 +17,16 @@ export default class Timer {
 
     this.timerInSeconds = 25 * 60;
     this.isActive = false;
+    this.isAnimating = false;
     this.interval = null;
+  }
+
+  pulseAnimation({ element }) {
+    element.animate([{ opacity: 1 }, { opacity: 0.8 }], {
+      duration: 1000,
+      easing: 'ease-out',
+      iterations: 1,
+    });
   }
 
   renderTimeOnDisplay() {
@@ -63,6 +72,17 @@ export default class Timer {
         this.elements.buttons.reset.disabled = true;
         this.isActive = true;
         this.renderButton();
+        this.pulseAnimation({
+          element: this.elements.timer.colon,
+        });
+        this.pulseAnimation({
+          element: this.elements.timer.seconds,
+        });
+        if (this.timerInSeconds % 60 === 0) {
+          this.pulseAnimation({
+            element: this.elements.timer.minutes,
+          });
+        }
       }
     }, 1000);
   }
