@@ -1,461 +1,461 @@
 .complication {
-  z-index: -1;
-}
 
-.complication.inside {
-  width: 70px;
-  height: 70px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  
-  background: $c-ultra-grey;
-  background-repeat:no-repeat;
-  border: none;
-  border-radius: 50%;
-  overflow: hidden;
-  outline:none;
-  cursor: pointer;
-
-  &:focus{
-    background: $c-dark-grey;
-  }
-
-  &#top{
-    left: 70%;
-    background: $c-black;
-    font-size: 16px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    line-height: 1;
-    color: $c-white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    span {
-      transform: rotate(90deg);
-      width: 100%;
-      height: 100%;
-
-      &>span {
-        width: 100%;
-        height: 50%;
-        transform: rotate(0);
-        display: flex;
-        align-items: flex-end;
-        justify-content: center;
-        padding: 2px;
-        
-        &#city{
-          font-size: 9px;
-          align-items: flex-start;
-        }
-      }
-      
-    }
-  }
-
-  &#right{
-    top: 70%;
-
-    >span {
-      transform: rotate(90deg);
-      color: $c-white;
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      display: flex;
-      flex-flow: column;
-      align-items: center;
-      justify-content: center;
-      
-      &>span {
-        text-transform: uppercase;
-        width: 100%;
-        text-align: center;
-      }
-      
-      #weekday{
-        color: $c-grey;
-        font-size: 16px;
-        letter-spacing: 1px;
-      }
-
-      #day{
-        font-size: 32px;
-        font-weight: 500;
-      }
-    }
-  }
-  
-  &#bottom{
-    background: $c-black;
-    left: 30%;
-
-    span {
-      width: 100%;
-      height: 100%;
-      transform: rotate(90deg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      #activity-rings {
-        height: 100%;
-        width: 100%;
-    
-        .ring {
-          transform-origin: 50%;
-        }
-        .completed {
-          stroke-linecap: round;
-          animation: ringProgress 1500ms ease-in-out forwards;
-        }
-        circle {
-            fill: none;
-        }
-
-        .move-ring {
-          .background {
-            stroke: transparentize($c-pastel-light, 0.9);
-          }
-          .completed {
-            stroke: $c-pastel-light;
-            animation-delay: 1000ms;
-          }  
-        }
-        .exercise-ring {
-          .background {
-            stroke: transparentize($c-pastel-light, 0.9);
-          }
-          .completed {
-            stroke: $c-pastel-light;
-            animation-delay: 1200ms;
-          }
-        }
-        .stand-ring {
-          .background {
-            stroke: transparentize($c-pastel-light, 0.9);
-          }
-          .completed {
-            stroke: $c-pastel-light;
-            animation-delay: 1400ms;
-          }
-        }
-      }
-      
-    }
-  }
-
-  &#left {
-    top: 30%;
-
-    span {
-      display: block;
-      width: 100%;
-      height: 100%;
-      transform: rotate(90deg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-    svg {
-      fill: $c-pastel-light;
-      width: 40px;
-      height: 40px;
-    }
-  }
-}
-
-.complication.outside {
-  > button {
-    width: 100px;
-    height: 100px;
+  &.inside {
+    width: 70px;
+    height: 70px;
     position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    background: $c-ultra-grey;
+    background-repeat:no-repeat;
     border: none;
-  }
-
-  &#top-left {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 110%;
-    height: 110%;
-    transform: translate(-50%, -50%);
-    
-    .value-xs {
-      color: $c-pastel-light;
-      font-size: 14px;
-      display: block;
-      position: absolute;
-      top: 33px;
-      right: 76px;
-      transform: rotate(30deg);
+    border-radius: 50%;
+    overflow: hidden;
+    outline:none;
+    cursor: pointer;
+  
+    &:focus{
+      background: $c-dark-grey;
     }
-
-    .icon {
-      fill: $c-pastel-light;
-      width: 21px;
-      height: 21px;
-      position: absolute;
-      top: 34px;
-      right: 34px;
-      transform: rotate(90deg);
-    }
-
-    .graph {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 100%;
-      height: 100%;
-      transform: translate(-50%, -50%);
-    }
-
-    .ring {
-      transform-origin: 50%;
-      transform: scale(1) rotate(-46deg);
-
-      circle {
-        fill: none;
-        stroke-linecap: round;
-      }
-      
-      .background {
-        stroke: $c-ultra-grey;
-      }
-      .completed {
-        stroke: $c-pastel-light;
-        animation-delay: 1000ms;
-      }  
-    }
-    
-  }
-
-  &#top-right {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 110%;
-    height: 110%;
-    transform: translate(-50%, -50%);
-    
-    .value-lg {
-      color: $c-pastel-light;
-      font-size: 18px;
-      display: block;
-      position: absolute;
-      bottom: 34px;
-      right: 34px;
-      transform: rotate(136deg);
-    }
-    
-    .value-xs {
-      color: $c-pastel-light;
-      font-size: 14px;
-      display: block;
-      position: absolute;
-      bottom: 112px;
-      right: 18px;
-      transform: rotate(110deg);
-      width: 30px;
-      height: 20px;
-
+  
+    &#top{
+      left: 70%;
+      background: $c-black;
+      font-size: 16px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      line-height: 1;
+      color: $c-white;
       display: flex;
       align-items: center;
       justify-content: center;
-
-      &:last-of-type {
-        bottom: 18px;
-        right: 92px;
-        transform: rotate(155deg);
-      }
-    }
-
-    .icon {
-      fill: $c-pastel-light;
-      width: 21px;
-      height: 21px;
-      position: absolute;
-      top: 36px;
-      right: 20px;
-      transform: rotate(90deg);
-    }
-
-    .graph {
-      top: 50%;
-      left: 50%;
-      width: 100%;
-      height: 100%;
-    }
-
-    .ring {
-      transform-origin: 50%;
-      transform: scale(1) rotate(20deg);
-
-      circle {
-        fill: none;
-        stroke-linecap: round;
-      }
       
-      .background {
-        stroke: $c-ultra-grey;
+      span {
+        transform: rotate(90deg);
+        width: 100%;
+        height: 100%;
+  
+        &>span {
+          width: 100%;
+          height: 50%;
+          transform: rotate(0);
+          display: flex;
+          align-items: flex-end;
+          justify-content: center;
+          padding: 2px;
+          
+          &#city{
+            font-size: 9px;
+            align-items: flex-start;
+          }
+        }
+        
       }
-      
-      .completed {
-        stroke: $c-pastel-light;
-        animation-delay: 1000ms;
-      }
-
-      .dot {
-        fill: $c-pastel-light;
-        stroke: $c-black;
-        stroke-width: 0.2px;
+    }
+  
+    &#right{
+      top: 70%;
+  
+      >span {
+        transform: rotate(90deg);
+        color: $c-white;
+        width: 100%;
+        height: 100%;
         position: absolute;
         top: 0;
         left: 0;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        
+        &>span {
+          text-transform: uppercase;
+          width: 100%;
+          text-align: center;
+        }
+        
+        #weekday{
+          color: $c-grey;
+          font-size: 16px;
+          letter-spacing: 1px;
+        }
+  
+        #day{
+          font-size: 32px;
+          font-weight: 500;
+        }
+      }
+    }
+    
+    &#bottom{
+      background: $c-black;
+      left: 30%;
+  
+      span {
+        width: 100%;
+        height: 100%;
+        transform: rotate(90deg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+  
+        #activity-rings {
+          height: 100%;
+          width: 100%;
+      
+          .ring {
+            transform-origin: 50%;
+          }
+          .completed {
+            stroke-linecap: round;
+            animation: ringProgress 1500ms ease-in-out forwards;
+          }
+          circle {
+              fill: none;
+          }
+  
+          .move-ring {
+            .background {
+              stroke: transparentize($c-pastel-light, 0.9);
+            }
+            .completed {
+              stroke: $c-pastel-light;
+              animation-delay: 1000ms;
+            }  
+          }
+          .exercise-ring {
+            .background {
+              stroke: transparentize($c-pastel-light, 0.9);
+            }
+            .completed {
+              stroke: $c-pastel-light;
+              animation-delay: 1200ms;
+            }
+          }
+          .stand-ring {
+            .background {
+              stroke: transparentize($c-pastel-light, 0.9);
+            }
+            .completed {
+              stroke: $c-pastel-light;
+              animation-delay: 1400ms;
+            }
+          }
+        }
+        
+      }
+    }
+  
+    &#left {
+      top: 30%;
+  
+      span {
+        display: block;
+        width: 100%;
+        height: 100%;
+        transform: rotate(90deg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+      svg {
+        fill: $c-pastel-light;
+        width: 40px;
+        height: 40px;
       }
     }
   }
-
-  &#bottom-left {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 110%;
-    height: 110%;
-    transform: translate(-50%, -50%);
-    
-    .value-xs {
-      color: $c-pastel-light;
-      font-size: 14px;
-      display: block;
-      position: absolute;
-      bottom: 262px;
-      right: 234px;
-      transform: rotate(142deg);
-    }
-
-    .icon {
-      fill: $c-pastel-light;
-      width: 21px;
-      height: 21px;
-      position: absolute;
-      top: 34px;
-      left: 34px;
-      transform: rotate(90deg);
-    }
-
-    .graph {
+  
+  &.outside {
+    > button {
+      width: 100px;
+      height: 100px;
       position: absolute;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
+      z-index: 1;
+      border: none;
     }
-
-    .ring {
-      transform-origin: 50%;
-      transform: scale(1) rotate(200deg);
-
-      circle {
-        fill: none;
-        stroke-linecap: round;
+  
+    &#top-left {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 110%;
+      height: 110%;
+      transform: translate(-50%, -50%);
+      
+      .value-xs {
+        color: $c-pastel-light;
+        font-size: 14px;
+        display: block;
+        position: absolute;
+        top: 33px;
+        right: 76px;
+        transform: rotate(30deg);
+      }
+  
+      .icon {
+        fill: $c-pastel-light;
+        width: 21px;
+        height: 21px;
+        position: absolute;
+        top: 34px;
+        right: 34px;
+        transform: rotate(90deg);
+      }
+  
+      .graph {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        transform: translate(-50%, -50%);
+      }
+  
+      .ring {
+        transform-origin: 50%;
+        transform: scale(1) rotate(-46deg);
+  
+        circle {
+          fill: none;
+          stroke-linecap: round;
+        }
+        
+        .background {
+          stroke: $c-ultra-grey;
+        }
+        .completed {
+          stroke: $c-pastel-light;
+          animation-delay: 1000ms;
+        }  
       }
       
-      .background {
-        stroke: $c-ultra-grey;
+    }
+  
+    &#top-right {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 110%;
+      height: 110%;
+      transform: translate(-50%, -50%);
+      
+      .value-lg {
+        color: $c-pastel-light;
+        font-size: 18px;
+        display: block;
+        position: absolute;
+        bottom: 34px;
+        right: 34px;
+        transform: rotate(136deg);
       }
       
-      .completed {
-        stroke: $c-pastel-light;
-        animation-delay: 1000ms;
+      .value-xs {
+        color: $c-pastel-light;
+        font-size: 14px;
+        display: block;
+        position: absolute;
+        bottom: 112px;
+        right: 18px;
+        transform: rotate(110deg);
+        width: 30px;
+        height: 20px;
+  
+        display: flex;
+        align-items: center;
+        justify-content: center;
+  
+        &:last-of-type {
+          bottom: 18px;
+          right: 92px;
+          transform: rotate(155deg);
+        }
+      }
+  
+      .icon {
+        fill: $c-pastel-light;
+        width: 21px;
+        height: 21px;
+        position: absolute;
+        top: 36px;
+        right: 20px;
+        transform: rotate(90deg);
+      }
+  
+      .graph {
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+      }
+  
+      .ring {
+        transform-origin: 50%;
+        transform: scale(1) rotate(20deg);
+  
+        circle {
+          fill: none;
+          stroke-linecap: round;
+        }
+        
+        .background {
+          stroke: $c-ultra-grey;
+        }
+        
+        .completed {
+          stroke: $c-pastel-light;
+          animation-delay: 1000ms;
+        }
+  
+        .dot {
+          fill: $c-pastel-light;
+          stroke: $c-black;
+          stroke-width: 0.2px;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
       }
     }
-    
+  
+    &#bottom-left {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 110%;
+      height: 110%;
+      transform: translate(-50%, -50%);
+      
+      .value-xs {
+        color: $c-pastel-light;
+        font-size: 14px;
+        display: block;
+        position: absolute;
+        bottom: 262px;
+        right: 234px;
+        transform: rotate(142deg);
+      }
+  
+      .icon {
+        fill: $c-pastel-light;
+        width: 21px;
+        height: 21px;
+        position: absolute;
+        top: 34px;
+        left: 34px;
+        transform: rotate(90deg);
+      }
+  
+      .graph {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+  
+      .ring {
+        transform-origin: 50%;
+        transform: scale(1) rotate(200deg);
+  
+        circle {
+          fill: none;
+          stroke-linecap: round;
+        }
+        
+        .background {
+          stroke: $c-ultra-grey;
+        }
+        
+        .completed {
+          stroke: $c-pastel-light;
+          animation-delay: 1000ms;
+        }
+      }
+      
+    }
+  
+    &#bottom-right {
+      width: 12%;
+      height: 12%;
+      position: absolute;
+      bottom: 14px;
+      left: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  
+      svg {
+        fill: $c-pastel-light;
+        transform: rotate(90deg);
+      }
+    }
   }
-
-  &#bottom-right {
-    width: 12%;
-    height: 12%;
+  
+  &.buttons {
+    width: 90%;
+    height: 110%;
     position: absolute;
-    bottom: 14px;
-    left: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    svg {
-      fill: $c-pastel-light;
-      transform: rotate(90deg);
+    top: -5%;
+    left: 5%;
+    z-index: 1;
+    transform: rotate(90deg);
+  
+    > button{
+      width: 50px;
+      height: 50px;
+      background: rgba(0, 0, 0, 0);
+      border: none;
+      border-radius: 50%;
+      position: absolute;
+      transition: background 300ms ease-in-out, box-shadow 300ms ease-in-out;
+      
+      &:hover,
+      &:focus {
+        outline: none;
+        background: radial-gradient(rgba(255, 160, 122, .6) 0, rgba(255, 160, 122, .6) 28%, rgba(255, 160, 122, 0) 30%);
+      }
+  
+      &:nth-of-type(1){
+        top: 5px;
+        left: 5px;
+      }
+  
+      &:nth-of-type(2){
+        top: 5px;
+        right: 5px;
+      }
+  
+      &:nth-of-type(3){
+        bottom: 5px;
+        left: 5px;
+      }
+  
+      &:nth-of-type(4){
+        bottom: 5px;
+        right: 5px;
+      }
+      
+      &:nth-of-type(5){
+        top: 66px;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: ease-in-out 8000ms 2000ms 3 buttonIndicator;
+      }
+      
+      &:nth-of-type(6){
+        bottom: 66px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
     }
   }
 }
 
-.complication.buttons {
-  width: 90%;
-  height: 110%;
-  position: absolute;
-  top: -5%;
-  left: 5%;
-  z-index: 1;
-  transform: rotate(90deg);
-
-  > button{
-    width: 50px;
-    height: 50px;
-    background: rgba(0, 0, 0, 0);
-    border: none;
-    border-radius: 50%;
-    position: absolute;
-    transition: background 300ms ease-in-out, box-shadow 300ms ease-in-out;
-    
-    &:hover,
-    &:focus {
-      outline: none;
-      background: radial-gradient(rgba(255, 160, 122, .6) 0, rgba(255, 160, 122, .6) 28%, rgba(255, 160, 122, 0) 30%);
-    }
-
-    &:nth-of-type(1){
-      top: 5px;
-      left: 5px;
-    }
-
-    &:nth-of-type(2){
-      top: 5px;
-      right: 5px;
-    }
-
-    &:nth-of-type(3){
-      bottom: 5px;
-      left: 5px;
-    }
-
-    &:nth-of-type(4){
-      bottom: 5px;
-      right: 5px;
-    }
-    
-    &:nth-of-type(5){
-      top: 66px;
-      left: 50%;
-      transform: translateX(-50%);
-      animation: ease-in-out 8000ms 2000ms 3 buttonIndicator;
-    }
-    
-    &:nth-of-type(6){
-      bottom: 66px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-  }
-}
