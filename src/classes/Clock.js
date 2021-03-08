@@ -169,14 +169,15 @@ export default class Clock {
   }
 
   updateClockOnWindowFocus() {
-    window.onfocus = () => {
+    window.addEventListener('focus', () => {
       if (!this.hasFocus) {
         this.updateClock();
         this.hasFocus = true;
       }
-    };
-
-    window.onblur = () => (this.hasFocus = false);
+    });
+    window.addEventListener('blur', () => {
+      this.hasFocus = false;
+    });
   }
 
   async execute() {
