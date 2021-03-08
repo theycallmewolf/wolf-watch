@@ -23,6 +23,8 @@ export default class Timer {
     this.isActive = false;
     this.isAnimating = false;
     this.interval = null;
+    this.onblurDate;
+    this.onFocusDate;
   }
 
   pulseAnimation({ element }) {
@@ -58,6 +60,23 @@ export default class Timer {
     );
   }
 
+  updateTimerOnWindowFocus() {
+    window.addEventListener('blur', () => {
+      this.onblurDate = new Date();
+    });
+
+    window.addEventListener('focus', () => {
+      this.onFocusDate = new Date();
+      const diffInSeconds = Math.abs(
+        (this.onFocusDate - this.onblurDate) / 1000,
+      );
+
+      if (this.isActive) {
+        this.timerInSeconds -= diffInSeconds;
+      }
+    });
+  }
+
   increase() {
     this.timerInSeconds += 5 * 60;
     if (this.timerInSeconds >= 60 * 60) {
@@ -78,12 +97,12 @@ export default class Timer {
     this.timerStartValueInSeconds = this.timerInSeconds;
     this.interval = setInterval(() => {
       if (this.timerInSeconds > 0) {
+        this.isActive = true;
         this.timerInSeconds--;
         this.renderTimeOnDisplay();
         this.elements.buttons.increase.disabled = true;
         this.elements.buttons.decrease.disabled = true;
         this.elements.buttons.reset.disabled = true;
-        this.isActive = true;
         this.renderButton();
         this.pulseAnimation({
           element: this.elements.complication.timer,
@@ -102,6 +121,7 @@ export default class Timer {
         this.renderGraph();
       }
     }, 1000);
+    this.updateTimerOnWindowFocus();
   }
 
   stop() {
