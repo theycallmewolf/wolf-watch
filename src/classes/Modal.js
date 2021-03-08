@@ -1,5 +1,17 @@
 export default class Modal {
-  constructor() {}
+  constructor() {
+    this.elements = {
+      complications: document.querySelectorAll('.complication'),
+      modal: document.getElementById('modal'),
+      locationInput: document.getElementById('location'),
+      views: document.querySelectorAll('#modal > div'),
+      buttons: {
+        top: document.getElementById('button-top'),
+        bottomLeft: document.getElementById('button-bottom-left'),
+        close: document.getElementById('close-button'),
+      },
+    };
+  }
 
   open({ content }) {
     switch (content) {
@@ -14,30 +26,29 @@ export default class Modal {
       default:
         break;
     }
-    document.getElementById('modal').classList.add('show');
+
+    this.elements.modal.classList.add('show');
   }
 
   close() {
-    document.getElementById('modal').classList.remove('show');
-    document.getElementById('location').value = '';
-    document.querySelectorAll('#modal > div').forEach(element => {
+    this.elements.modal.classList.remove('show');
+    this.elements.locationInput.value = '';
+    this.elements.views.forEach(element => {
       element.classList.add('hide');
     });
   }
 
   execute() {
-    document.getElementById('button-top').addEventListener('click', () => {
+    this.elements.buttons.top.addEventListener('click', () => {
       this.open({ content: 'search' });
     });
 
-    document
-      .getElementById('button-bottom-left')
-      .addEventListener('click', () => {
-        this.open({ content: 'timer' });
-      });
+    this.elements.buttons.bottomLeft.addEventListener('click', () => {
+      this.open({ content: 'timer' });
+    });
 
-    document
-      .getElementById('close-button')
-      .addEventListener('click', this.close);
+    this.elements.buttons.close.addEventListener('click', () => {
+      this.close();
+    });
   }
 }
