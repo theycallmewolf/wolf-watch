@@ -38,7 +38,9 @@ export default class Modal {
     this.DOM.complications.forEach(complication => {
       complication.classList.remove('hide');
     });
-    this.DOM.modal.classList.remove('show');
+    this.DOM.modal.classList.contains('show')
+      ? this.DOM.modal.classList.remove('show')
+      : null;
     this.DOM.locationInput.value = '';
     this.DOM.views.forEach(element => {
       element.classList.add('hide');

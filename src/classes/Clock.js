@@ -168,7 +168,7 @@ export default class Clock {
     this.setCurrentTime({ time });
     this.setClock();
     setWeather({ weather });
-    this.modal.close;
+    this.modal.close();
   }
 
   updateClockOnWindowFocus() {
