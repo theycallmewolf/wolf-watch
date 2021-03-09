@@ -27,10 +27,17 @@ export default class Modal {
         break;
     }
 
+    this.elements.complications.forEach(complication => {
+      complication.classList.add('hide');
+    });
+
     this.elements.modal.classList.add('show');
   }
 
   close() {
+    this.elements.complications.forEach(complication => {
+      complication.classList.remove('hide');
+    });
     this.elements.modal.classList.remove('show');
     this.elements.locationInput.value = '';
     this.elements.views.forEach(element => {
