@@ -74,81 +74,82 @@ export default class Clock {
   }
 
   setClock() {
-    let s = this.currentTime.seconds;
-    let m = this.currentTime.minutes;
-    let h = this.currentTime.hours;
+    let seconds = this.currentTime.seconds;
+    let minutes = this.currentTime.minutes;
+    let hours = this.currentTime.hours;
     let w = this.currentTime.weekday;
     let M = this.currentTime.dayOfTheMonth;
 
-    s = s * 6;
-    m = m * 6;
-    h > 12 ? (h = h - 12) : h;
-    h = h * 30;
+    seconds *= 6;
+    minutes *= 6;
+    hours > 12 ? (hours -= 12) : hours;
+    hours *= 30;
 
     // fine-tunning hour hand
     switch (true) {
-      case m > 330:
-        h += 27.5;
+      case minutes > 330:
+        hours += 27.5;
         break;
 
-      case m > 300:
-        h += 25;
+      case minutes > 300:
+        hours += 25;
         break;
 
-      case m > 270:
-        h += 22.5;
+      case minutes > 270:
+        hours += 22.5;
         break;
 
-      case m > 240:
-        h += 20;
+      case minutes > 240:
+        hours += 20;
         break;
 
-      case m > 210:
-        h += 17.5;
+      case minutes > 210:
+        hours += 17.5;
         break;
 
-      case m > 180:
-        h += 15;
+      case minutes > 180:
+        hours += 15;
         break;
 
-      case m > 150:
-        h += 12.5;
+      case minutes > 150:
+        hours += 12.5;
         break;
 
-      case m > 120:
-        h += 10;
+      case minutes > 120:
+        hours += 10;
         break;
 
-      case m > 90:
-        h += 7.5;
+      case minutes > 90:
+        hours += 7.5;
         break;
 
-      case m > 60:
-        h += 5;
+      case minutes > 60:
+        hours += 5;
         break;
 
-      case m > 30:
-        h += 2.5;
+      case minutes > 30:
+        hours += 2.5;
         break;
 
       default:
-        h;
+        hours;
         break;
     }
 
+    // update DOM
     this.DOM.watch.hand.hour.setAttribute(
       'style',
-      `transform: translate(-50%, -50%) rotate(${h}deg)`,
+      `transform: translate(-50%, -50%) rotate(${hours}deg)`,
     );
 
     this.DOM.watch.hand.minute.setAttribute(
       'style',
-      `transform: translate(-50%, -50%) rotate(${m}deg)`,
+      `transform: translate(-50%, -50%) rotate(${minutes}deg)`,
     );
 
     this.DOM.watch.hand.second.setAttribute(
       'style',
-      `transform: translate(-50%, -50%) rotate(${s}deg)`,
+      `transform: translate(-50%, -50%) rotate(${seconds}deg)`,
     );
 
     this.DOM.watch.display.weekday.innerHTML = w;
