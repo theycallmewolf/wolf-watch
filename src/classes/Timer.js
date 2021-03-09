@@ -1,6 +1,6 @@
 export default class Timer {
   constructor() {
-    this.elements = {
+    this.DOM = {
       buttons: {
         increase: document.getElementById('add-minutes'),
         decrease: document.getElementById('remove-minutes'),
@@ -41,20 +41,18 @@ export default class Timer {
       2,
       '0',
     );
-    this.elements.timer.minutes.innerText = minutes;
-    this.elements.timer.seconds.innerText = seconds;
-    this.elements.complication.timer.innerText = `${minutes}:${seconds}`;
+    this.DOM.timer.minutes.innerText = minutes;
+    this.DOM.timer.seconds.innerText = seconds;
+    this.DOM.complication.timer.innerText = `${minutes}:${seconds}`;
   }
 
   renderButton() {
-    this.elements.buttons.toggleStart.innerText = this.isActive
-      ? 'stop'
-      : 'start';
+    this.DOM.buttons.toggleStart.innerText = this.isActive ? 'stop' : 'start';
   }
 
   renderGraph() {
     const value = (6.5 * this.timerInSeconds) / this.timerStartValueInSeconds;
-    this.elements.complication.graph.setAttribute(
+    this.DOM.complication.graph.setAttribute(
       'stroke-dasharray',
       `${value}, 100`,
     );
@@ -100,22 +98,22 @@ export default class Timer {
         this.isActive = true;
         this.timerInSeconds--;
         this.renderTimeOnDisplay();
-        this.elements.buttons.increase.disabled = true;
-        this.elements.buttons.decrease.disabled = true;
-        this.elements.buttons.reset.disabled = true;
+        this.DOM.buttons.increase.disabled = true;
+        this.DOM.buttons.decrease.disabled = true;
+        this.DOM.buttons.reset.disabled = true;
         this.renderButton();
         this.pulseAnimation({
-          element: this.elements.complication.timer,
+          element: this.DOM.complication.timer,
         });
         this.pulseAnimation({
-          element: this.elements.timer.colon,
+          element: this.DOM.timer.colon,
         });
         this.pulseAnimation({
-          element: this.elements.timer.seconds,
+          element: this.DOM.timer.seconds,
         });
         if (this.timerInSeconds % 60 === 0) {
           this.pulseAnimation({
-            element: this.elements.timer.minutes,
+            element: this.DOM.timer.minutes,
           });
         }
         this.renderGraph();
@@ -125,9 +123,9 @@ export default class Timer {
   }
 
   stop() {
-    this.elements.buttons.increase.disabled = false;
-    this.elements.buttons.decrease.disabled = false;
-    this.elements.buttons.reset.disabled = false;
+    this.DOM.buttons.increase.disabled = false;
+    this.DOM.buttons.decrease.disabled = false;
+    this.DOM.buttons.reset.disabled = false;
     clearInterval(this.interval);
     this.isActive = false;
     this.renderButton();
@@ -141,10 +139,10 @@ export default class Timer {
   execute() {
     this.renderTimeOnDisplay();
     this.renderButton();
-    this.elements.buttons.increase.onclick = () => this.increase();
-    this.elements.buttons.decrease.onclick = () => this.decrease();
-    this.elements.buttons.reset.onclick = () => this.reset();
-    this.elements.buttons.toggleStart.onclick = () => {
+    this.DOM.buttons.increase.onclick = () => this.increase();
+    this.DOM.buttons.decrease.onclick = () => this.decrease();
+    this.DOM.buttons.reset.onclick = () => this.reset();
+    this.DOM.buttons.toggleStart.onclick = () => {
       !this.isActive ? this.start() : this.stop();
     };
   }

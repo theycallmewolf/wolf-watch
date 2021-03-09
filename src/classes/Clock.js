@@ -17,7 +17,7 @@ export default class Clock {
     };
     this.currentCity;
     this.hasFocus = true;
-    this.elements = {
+    this.DOM = {
       watch: {
         hand: {
           hour: document.getElementById('hour'),
@@ -136,23 +136,23 @@ export default class Clock {
         break;
     }
 
-    this.elements.watch.hand.hour.setAttribute(
+    this.DOM.watch.hand.hour.setAttribute(
       'style',
       `transform: translate(-50%, -50%) rotate(${h}deg)`,
     );
 
-    this.elements.watch.hand.minute.setAttribute(
+    this.DOM.watch.hand.minute.setAttribute(
       'style',
       `transform: translate(-50%, -50%) rotate(${m}deg)`,
     );
 
-    this.elements.watch.hand.second.setAttribute(
+    this.DOM.watch.hand.second.setAttribute(
       'style',
       `transform: translate(-50%, -50%) rotate(${s}deg)`,
     );
 
-    this.elements.watch.display.weekday.innerHTML = w;
-    this.elements.watch.display.day.innerHTML = M;
+    this.DOM.watch.display.weekday.innerHTML = w;
+    this.DOM.watch.display.day.innerHTML = M;
   }
 
   async updateClock() {
@@ -160,7 +160,7 @@ export default class Clock {
       city: this.currentCity,
     });
 
-    this.elements.input.city.innerText = location.title;
+    this.DOM.input.city.innerText = location.title;
 
     this.setCurrentTime({ time });
     this.setClock();
@@ -184,8 +184,8 @@ export default class Clock {
     this.currentCity = await getCityNameByIP();
     this.updateClock();
 
-    this.elements.button.citySearch.addEventListener('click', () => {
-      let inputValue = this.elements.input.location.value;
+    this.DOM.button.citySearch.addEventListener('click', () => {
+      let inputValue = this.DOM.input.location.value;
 
       if (inputValue) {
         this.currentCity = inputValue;

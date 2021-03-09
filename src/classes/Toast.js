@@ -1,6 +1,6 @@
 export default class Toast {
   constructor() {
-    this.elements = {
+    this.DOM = {
       toast: document.getElementById('toast'),
       title: document.createElement('strong'),
       description: document.createElement('span'),
@@ -8,17 +8,17 @@ export default class Toast {
   }
 
   remove() {
-    this.elements.toast.classList.remove('show');
-    this.elements.title.innerText = '';
-    this.elements.description.innerText = '';
+    this.DOM.toast.classList.remove('show');
+    this.DOM.title.innerText = '';
+    this.DOM.description.innerText = '';
   }
 
   add({ title, description }) {
-    this.elements.title.innerText = title;
-    this.elements.description.innerText = description;
-    this.elements.toast.appendChild(this.elements.title);
-    this.elements.toast.appendChild(this.elements.description);
-    this.elements.toast.classList.add('show');
+    this.DOM.title.innerText = title;
+    this.DOM.description.innerText = description;
+    this.DOM.toast.appendChild(this.DOM.title);
+    this.DOM.toast.appendChild(this.DOM.description);
+    this.DOM.toast.classList.add('show');
 
     setTimeout(() => {
       this.remove();

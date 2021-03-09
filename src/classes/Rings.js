@@ -1,6 +1,6 @@
 export default class Rings {
   constructor() {
-    this.elements = {
+    this.DOM = {
       rings: {
         move: document.querySelector('.move-ring .completed'),
         exercise: document.querySelector('.exercise-ring .completed'),
@@ -19,16 +19,13 @@ export default class Rings {
     const two = this.getRandomInt({ max: one });
     const three = this.getRandomInt({ max: 90 });
 
-    this.elements.rings.move.setAttribute('stroke-dasharray', `${one}, 100`);
-    this.elements.rings.exercise.setAttribute(
-      'stroke-dasharray',
-      `${two}, 100`,
-    );
-    this.elements.rings.stand.setAttribute('stroke-dasharray', `${three}, 100`);
+    this.DOM.rings.move.setAttribute('stroke-dasharray', `${one}, 100`);
+    this.DOM.rings.exercise.setAttribute('stroke-dasharray', `${two}, 100`);
+    this.DOM.rings.stand.setAttribute('stroke-dasharray', `${three}, 100`);
   }
-  
+
   execute() {
     this.set();
-    this.elements.button.addEventListener('click', () => this.set());
+    this.DOM.button.addEventListener('click', () => this.set());
   }
 }

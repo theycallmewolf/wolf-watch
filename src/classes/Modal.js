@@ -1,6 +1,6 @@
 export default class Modal {
   constructor() {
-    this.elements = {
+    this.DOM = {
       complications: document.querySelectorAll('.complication'),
       modal: document.getElementById('modal'),
       locationInput: document.getElementById('location'),
@@ -27,34 +27,34 @@ export default class Modal {
         break;
     }
 
-    this.elements.complications.forEach(complication => {
+    this.DOM.complications.forEach(complication => {
       complication.classList.add('hide');
     });
 
-    this.elements.modal.classList.add('show');
+    this.DOM.modal.classList.add('show');
   }
 
   close() {
-    this.elements.complications.forEach(complication => {
+    this.DOM.complications.forEach(complication => {
       complication.classList.remove('hide');
     });
-    this.elements.modal.classList.remove('show');
-    this.elements.locationInput.value = '';
-    this.elements.views.forEach(element => {
+    this.DOM.modal.classList.remove('show');
+    this.DOM.locationInput.value = '';
+    this.DOM.views.forEach(element => {
       element.classList.add('hide');
     });
   }
 
   execute() {
-    this.elements.buttons.top.addEventListener('click', () => {
+    this.DOM.buttons.top.addEventListener('click', () => {
       this.open({ content: 'search' });
     });
 
-    this.elements.buttons.bottomLeft.addEventListener('click', () => {
+    this.DOM.buttons.bottomLeft.addEventListener('click', () => {
       this.open({ content: 'timer' });
     });
 
-    this.elements.buttons.close.addEventListener('click', () => {
+    this.DOM.buttons.close.addEventListener('click', () => {
       this.close();
     });
   }
