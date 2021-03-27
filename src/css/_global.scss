@@ -6,8 +6,7 @@
 
 html,
 body {
-  background: $c-pastel;
-  background: linear-gradient(0deg, $c-pastel 0%, $c-pastel-light 100%);
+  background: linear-gradient(0deg, $c-pastel 0%, $c-pastel-light 100%) $c-pastel-light;
   width: 100vw;
   height: var(--app-height);
   font-family: 'Roboto', sans-serif;
