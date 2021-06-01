@@ -1,6 +1,7 @@
 const path = require('path');
 const Dotenv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin');
 
 module.exports = {
   entry: path.resolve(__dirname, 'src', 'index.js'),
@@ -42,6 +43,14 @@ module.exports = {
       },
       favicon: path.resolve(__dirname, 'src', 'img', 'icons', 'favicon.ico'),
       // minify: false
+    }),
+    new HtmlWebpackPartialsPlugin({
+      path: path.resolve(__dirname, 'src', 'partials', 'analytics.html'),
+      location: 'body',
+      priority: 'high',
+      options: {
+        ga_property_id: 'G-P37ZRBHH5Q',
+      },
     }),
     new Dotenv(),
   ],
